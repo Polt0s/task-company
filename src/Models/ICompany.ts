@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface ICompany {
   nameCompany: string;
   address: string;
@@ -5,5 +7,7 @@ export interface ICompany {
   phone: string;
   id?: number;
   onClick?: any;
-  dedicated?: boolean;
+  selected?: boolean;
+  style?: React.CSSProperties;
+  onContextMenu?: (event: React.MouseEvent) => void
 }

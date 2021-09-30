@@ -5,7 +5,7 @@
     "email": "petrostroi@mail.ru",
     "phone": "+7911555454",
     "id": "0",
-    "dedicated": "false"
+    "selected": false
   },
   {
     "nameCompany": "Сантехники-спб",
@@ -13,48 +13,54 @@
     "email": "sant@gmail.com",
     "phone": "+79115487865",
     "id": "1",
-    "dedicated": "false"
+    "selected": false
   },
   {
     "nameCompany": "Праздники-спб",
     "address": "санкт-петербург",
     "email": "happy@mail.ru",
     "phone": "+79846542545",
-    "id": "2"
+    "id": "2",
+    "selected": false
   },
   {
     "nameCompany": "Ололошка",
     "address": "Москва",
     "email": "ololo@bk.ru",
     "phone": "+79654587845",
-    "id": "3"
+    "id": "3",
+    "selected": false
   },
   {
     "nameCompany": "Кольцо",
     "address": "Москва",
     "email": "circle@mail.ru",
     "phone": "+79545523355",
-    "id": "4"
+    "id": "4",
+    "selected": false
   },
   {
     "nameCompany": "Домофоны",
     "address": "санкт-петербург",
     "email": "dom@mail.ru",
     "phone": "+79115555555",
-    "id": "5"
+    "id": "5",
+    "selected": false
   },
   {
     "nameCompany": "Ограда",
     "address": "мурманск",
     "email": "Jrdsf@gmail.com",
     "phone": "+79884455441",
-    "id": "6"
+    "id": "6",
+    "selected": false
   },
   {
     "nameCompany": "Светоприборы",
     "adress": "Воронеж",
     "email": "svetosd@mail.ru",
     "phone": "+79565454554",
-    "id": "7"
+    "id": "7",
+    "selected": false
   }
 ]
