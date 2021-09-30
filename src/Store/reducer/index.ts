@@ -1,10 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit'
 import useCompany from './company';
-import useUser from './user';
+import useUser from './userService';
 
 const reducer = combineReducers({
   company: useCompany,
-  user: useUser,
+  userService: useUser,
 });
 
 export type RootState = ReturnType<typeof reducer>;

@@ -5,6 +5,7 @@ import { useForm } from '../../Hooks/useForm';
 import { ICompany } from '../../Models/ICompany';
 import { addCompany } from '../../Store/reducer/company';
 import validateForm from '../../utils/ValidateForm';
+import Btn from '../Button/Btn';
 import Input from '../Input/Input';
 
 const initialValues: ICompany = {
@@ -14,7 +15,7 @@ const initialValues: ICompany = {
   phone: '',
 };
 
-const FormCompany: React.FC = () => {
+const CompanyForm: React.FC = () => {
   const dispatch = useAppDispatch();
   const company = useAppSelector(state => state.company.company);
   const { handleChange, values, errors, setValues } = useForm(validateForm, initialValues);
@@ -32,10 +33,10 @@ const FormCompany: React.FC = () => {
         <Input type="text" name="address" handleChange={handleChange} value={values.address} placeholder="адрес компании" error={errors.address} />
         <Input type="text" name="email" handleChange={handleChange} value={values.email} placeholder="электронный адрес" error={errors.email} />
         <Input type="tel" name="phone" handleChange={handleChange} value={values.phone} placeholder="телефон компании" error={errors.phone} />
-        <button type="submit">отправить</button>
+        <Btn type="submit">Отправить</Btn>
       </form>
     </div>
   );
 };
 
-export default FormCompany;
+export default CompanyForm;
