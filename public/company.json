@@ -1,0 +1,50 @@
+[
+  {
+    "nameCompany": "Петрострой",
+    "address": "Пермь",
+    "email": "petrostroi@mail.ru",
+    "phone": "+7911555454"
+  },
+  {
+    "nameCompany": "Сантехники-спб",
+    "address": "санкт-петербург",
+    "email": "sant@gmail.com",
+    "phone": "+79115487865"
+  },
+  {
+    "nameCompany": "Праздники-спб",
+    "address": "санкт-петербург",
+    "email": "happy@mail.ru",
+    "phone": "+79846542545"
+  },
+  {
+    "nameCompany": "Ололошка",
+    "address": "Москва",
+    "email": "ololo@bk.ru",
+    "phone": "+79654587845"
+  },
+  {
+    "nameCompany": "Кольцо",
+    "address": "Москва",
+    "email": "circle@mail.ru",
+    "phone": "+79545523355"
+  },
+  {
+    "nameCompany": "Домофоны",
+    "address": "санкт-петербург",
+    "email": "dom@mail.ru",
+    "phone": "+79115555555"
+  },
+  {
+    "nameCompany": "Ограда",
+    "address": "мурманск",
+    "email": "Jrdsf@gmail.com",
+    "phone": "+79884455441"
+  },
+  {
+    "nameCompany": "Светоприборы",
+    "adress": "Воронеж",
+    "email": "svetosd@mail.ru",
+    "phone": "+79565454554"
+  }
+]

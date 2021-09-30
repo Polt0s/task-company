@@ -1,0 +1,27 @@
+@import '../variable'
+
+.card-block
+  display: grid
+  grid-template-columns: repeat(12, 1fr)
+
+.card-item
+  padding: 16px
+  background-color: lightgreen
+  margin: 10px
+  grid-column: span 6 / auto
+
+  &:hover
+    box-shadow: $main-shadow
+    cursor: pointer
+
+  &:last-child
+    background-color: yellow
+
+  &__text
+    font-size: 18px
+    color: $color-black-main
+    font-family: $main-font
+    font-weight: normal
+    font-style: normal
+    margin: 0
+    padding: 0
