@@ -4,12 +4,12 @@ import './button.sass';
 interface BtnProps {
   type?: "button" | "submit" | "reset" | undefined;
   style?: React.CSSProperties;
-  onClick?: (event: React.ChangeEvent<HTMLButtonElement>) => void;
+  onClick?: () => void;
 }
 
-const Btn: React.FC<BtnProps> = ({ children, type, style }) => {
+const Btn: React.FC<BtnProps> = ({ children, type, style, onClick }) => {
   return (
-    <button className={'btn-main'} type={type} style={style}>
+    <button className={'btn-main'} type={type} style={style} onClick={onClick}>
       {children}
     </button>
   );

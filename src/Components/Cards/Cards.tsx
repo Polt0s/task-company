@@ -7,7 +7,7 @@ import useAppDispatch from '../../Hooks/useAppDispatch';
 import { useFetching } from '../../Hooks/useFetching';
 import { ICompany } from '../../Models/ICompany';
 import useAppSelector from '../../Hooks/useAppSelector';
-import { addCompany } from '../../Store/reducer/company';
+import { addCompany, changeColorValue } from '../../Store/reducer/company';
 import './card.sass';
 
 const Cards: React.FC = () => {
@@ -23,6 +23,17 @@ const Cards: React.FC = () => {
     setIsLoading(false);
   }, [])
 
+  const objectCard = {
+
+  };
+  const [state, useState] = React.useState(company);
+  const cardRef = React.useRef();
+  const onClick = (id: any) => {
+    // dispatch(changeColorValue(id));
+    const current = company.filter((item) => item.id === id)
+    // useState([...state, { ...current, dedicated: true }])
+  };
+
   return (
     <>
       {isLoading ? <Loader /> : (
@@ -33,6 +44,8 @@ const Cards: React.FC = () => {
               address={item.address}
               email={item.email}
               phone={item.phone}
+              onClick={() => onClick(item.id)}
+              dedicated={item.dedicated}
             />
           ))}
         </div>

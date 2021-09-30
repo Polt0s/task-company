@@ -7,6 +7,7 @@ import { RouteNames } from '../../Router';
 import { setAddUser } from '../../Store/reducer/userService';
 import Btn from '../Button/Btn';
 import Input from '../Input/Input';
+import '../index.sass';
 
 const LoginForm: React.FC = () => {
   const router = useHistory();
@@ -32,7 +33,7 @@ const LoginForm: React.FC = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      {error ? <h2 ref={errorRef} id="text-error" style={{ color: 'red', fontSize: 20, textAlign: 'center' }}>{error}</h2> : ''}
+      {error ? <h2 ref={errorRef} id="text-error" className={'text-error'}>{error}</h2> : ''}
       <Input type="text" value={values.username} handleChange={handleChange} placeholder="Введите ваше имя" name="username" />
       <Input type="password" value={values.password} handleChange={handleChange} placeholder="Введите пароль" name="password" />
       <Btn type="submit" style={{ margin: 5 }}>Войти</Btn>

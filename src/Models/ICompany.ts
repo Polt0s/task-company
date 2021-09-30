@@ -3,4 +3,7 @@ export interface ICompany {
   address: string;
   email: string;
   phone: string;
+  id?: number;
+  onClick?: any;
+  dedicated?: boolean;
 }
