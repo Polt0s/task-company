@@ -8,7 +8,9 @@
   padding: 16px
   background-color: lightgreen
   margin: 10px
-  grid-column: span 6 / auto
+  grid-column: span 4 / auto
+  @media screen and (max-width: 1024px)
+    grid-column: span 12 / auto
 
   &:hover
     box-shadow: $main-shadow
@@ -18,10 +20,8 @@
     background-color: yellow
 
   &__text
+    @include main-font
     font-size: 18px
+    line-height: 18px
     color: $color-black-main
-    font-family: $main-font
-    font-weight: normal
-    font-style: normal
-    margin: 0
-    padding: 0
+    margin: 5px 0

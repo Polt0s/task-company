@@ -1,12 +1,12 @@
 @import '../variable'
   
 .input
+  @include main-font
   border: none
   outline: none
   background: $main-color-white
   box-shadow: $main-shadow
   border-radius: 8px
-  font-family: $main-font
   cursor: pointer
   font-size: 16px
   line-height: 16px
@@ -20,12 +20,8 @@
     border: none
 
   &__text-error
-    font-family: $main-font
-    font-weight: normal
-    font-style: normal
+    @include main-font
     color: red
     font-size: 14px
     line-height: 14px
-    margin: 0
-    padding: 0
 

@@ -1,12 +1,15 @@
+@import './variable'
+  
 .grid-root
   width: 100%
+  max-width: 1440px
   margin: 0 auto
   display: grid
   grid-template-columns: auto
 
 .grid-main
   display: grid
-  grid-template-areas: "content menu" "content form"
+  grid-template-areas: "content content menu" "content content form"
   @media screen and (max-width: 1024px)
     grid-template-areas: "menu" "content" "form"
 
@@ -15,6 +18,8 @@
   width: 100%
   height: 100%
   border-right: 2px solid teal
+  @media screen and (max-width: 1024px)
+    border: none
 
 .grid-main__menu
   grid-area: menu
@@ -28,6 +33,13 @@
   height: 100%
   border-top: 2px solid teal
 
+.main-content
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  @media screen and (max-width: 1024px)
+    height: 100vh
+
 .form-layout
   width: 100%
   display: flex
@@ -37,19 +49,18 @@
 
 .layout
   width: 100%
-  height: 100vh
-  top: 0
-  bottom: 0
-  right: 0
-  left: 0
+  height: 100%
+  padding: 20px
   display: flex
   justify-content: center
   align-items: center
 
 .text-error
-  color: red
+  @include main-font
   font-size: 16px
+  line-height: 16px
   text-align: center
+  color: red
 
 *
   text-decoration: none

@@ -9,6 +9,7 @@
   align-items: center
   padding: 5px 20px
   border: 2px solid teal
+  margin-top: auto
 
   &__img
     object-fit: contain
@@ -16,12 +17,11 @@
     height: 50px
 
   &__text
-    font-family: $main-font
-    font-weight: bold
-    font-style: normal
-    margin: 0
-    padding: 0
+    @include main-font
     font-size: 20px
     line-height: 20px
     color: $color-black-main
+    @media screen and (max-width: 1024px)
+      font-size: 14px
+      line-height: 14px
 

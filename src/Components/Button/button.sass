@@ -1,6 +1,7 @@
 @import '../variable'
   
 .btn-main
+  @include main-font
   display: block
   position: relative
   text-align: center
@@ -8,14 +9,13 @@
   height: 35px
   box-shadow: $main-shadow
   box-sizing: border-box
-  font-family: $main-font
-  font-weight: normal
-  font-style: normal
   font-size: 16px
   line-height: 16px
   cursor: pointer
   background-color: $main-purple
   padding: 5px 16px
   border-radius: 10px
+  @media screen and (max-width: 1024px)
+    height: 100%
   
 

@@ -14,12 +14,12 @@ const Header: React.FC = () => {
   const { isAuth } = useAppSelector((state) => state.userService);
   const dispatch = useAppDispatch();
   const { aboutMe } = useAppSelector((state) => state.dataUsers);
+  const [active, setActive] = React.useState(false);
+
   const handleClick = () => {
     dispatch(setLogout());
     router.push(RouteNames.LOGIN);
   };
-
-  const [active, setActive] = React.useState(false);
 
   React.useEffect(() => {
     dispatch(getInfoAboutMe());
@@ -44,16 +44,16 @@ const Header: React.FC = () => {
       </nav>
       <div>
         <Btn
-          onFocus={(event) => event.target.style.border = '2px solid red'}
-          onBlur={(event) => event.target.style.border = 'none'}
+          onFocus={(event) => event.target.style.background = 'lightblue'}
+          onBlur={(event) => event.target.style.background = '#b5b5f1'}
           onClick={changeLightTheme}
         >
           Светлая тема
         </Btn>
         <Btn
           onClick={changeDarkTheme}
-          onFocus={(event) => event.target.style.border = '2px solid red'}
-          onBlur={(event) => event.target.style.border = 'none'}
+          onFocus={(event) => event.target.style.background = 'lightblue'}
+          onBlur={(event) => event.target.style.background = '#b5b5f1'}
         >
           Тёмная тема
         </Btn>

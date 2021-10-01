@@ -3,8 +3,6 @@ import Loader from '../Loader/Loader';
 import CardItem from './CardItem';
 import { getCompanyData } from '../../Api/getCompanyData';
 import useAppDispatch from '../../Hooks/useAppDispatch';
-import { useFetching } from '../../Hooks/useFetching';
-import { ICompany } from '../../Models/ICompany';
 import useAppSelector from '../../Hooks/useAppSelector';
 import { setSelected } from '../../Store/reducer/company';
 import './card.sass';
@@ -13,9 +11,6 @@ const Cards: React.FC = () => {
   const company = useAppSelector(state => state.company.company);
   const [isLoading, setIsLoading] = React.useState(true);
   const dispatch = useAppDispatch();
-  // const [fetchCompany, isLoading] = useFetching(async () => {
-  //   dispatch(getCompanyData())
-  // })
 
   React.useEffect(() => {
     dispatch(getCompanyData())

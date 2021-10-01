@@ -15,9 +15,11 @@ const App: React.FC = () => {
 
   return (
     <div className={'grid-root'} style={{ backgroundColor: configTheme[theme.mode] }}>
-      <Header />
-      <AppRouter />
-      <Footer />
+      <div className={'main-content'}>
+        <Header />
+        <AppRouter />
+        <Footer />
+      </div>
     </div>
   );
 };
