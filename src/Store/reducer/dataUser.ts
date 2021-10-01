@@ -4,11 +4,11 @@ interface IDataUser {
   user: {
     name: string,
     company: string,
-    avatar: string | "Gravatar",
+    avatar_url: string | "Gravatar",
     followers: number,
   },
   aboutMe: {
-    avatar: string,
+    avatar_url: string,
     html_url: string,
     followers: number,
   },
@@ -18,11 +18,11 @@ const initialState = {
   user: {
     name: '',
     company: '',
-    avatar: '',
+    avatar_url: '',
     followers: 0,
   },
   aboutMe: {
-    avatar: '',
+    avatar_url: '',
     html_url: '',
     followers: 0,
   },

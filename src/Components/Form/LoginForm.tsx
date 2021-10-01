@@ -1,35 +1,22 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
-import useAppDispatch from '../../Hooks/useAppDispatch';
-import useAppSelector from '../../Hooks/useAppSelector';
 import { IUser } from '../../Models/IUser';
-import { RouteNames } from '../../Router';
-import { setAddUser } from '../../Store/reducer/userService';
 import Btn from '../Button/Btn';
 import Input from '../Input/Input';
 import '../index.sass';
 
-const LoginForm: React.FC = () => {
-  const router = useHistory();
-  const [values, setValues] = React.useState<IUser>({ username: '', password: '' });
-  const { error } = useAppSelector((state) => state.userService);
-  const dispatch = useAppDispatch();
+interface ILoginFormProps {
+  onSubmit: (event: React.ChangeEvent<HTMLFormElement>) => void;
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  error: string;
+  values: IUser;
+};
+
+const LoginForm: React.FC<ILoginFormProps> = ({ onSubmit, handleChange, error, values }) => {
   const errorRef = React.useRef<HTMLHeadingElement>(null);
 
-  const onSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    dispatch(setAddUser(values.username, values.password));
-    router.push(RouteNames.MAIN);
-  };
   React.useEffect(() => {
     errorRef.current = error;
-  }, [error])
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setValues({ ...values, [name]: value });
-  }
+  }, [error]);
 
   return (
     <form onSubmit={onSubmit}>

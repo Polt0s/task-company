@@ -1,24 +1,22 @@
 import React from 'react';
-import useAppSelector from '../Hooks/useAppSelector';
 import AppRouter from './AppRouter';
-import Footer from './Footer/Footer';
-import Header from './Header/Header';
+import FooterContainer from './Footer/FooterContainer';
+import HeaderContainer from './Header/HeaderContainer';
 import './index.sass';
 
-const configTheme = {
-  light: 'white',
-  dark: 'gray',
+interface IAppProps {
+  theme: 'light' | 'dark';
+  configTheme: { light: string, dark: string };
 };
 
-const App: React.FC = () => {
-  const { theme } = useAppSelector((state) => state.config);
+const App: React.FC<IAppProps> = ({ theme, configTheme }) => {
 
   return (
-    <div className={'grid-root'} style={{ backgroundColor: configTheme[theme.mode] }}>
+    <div className={'grid-root'} style={{ backgroundColor: configTheme[theme] }}>
       <div className={'main-content'}>
-        <Header />
+        <HeaderContainer />
         <AppRouter />
-        <Footer />
+        <FooterContainer />
       </div>
     </div>
   );

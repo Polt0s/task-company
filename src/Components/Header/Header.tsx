@@ -1,46 +1,24 @@
 import React from 'react';
-import { useHistory } from 'react-router';
-import { getInfoAboutMe } from '../../Api/getDataUser';
-import useAppDispatch from '../../Hooks/useAppDispatch';
-import useAppSelector from '../../Hooks/useAppSelector';
-import { RouteNames } from '../../Router';
-import { setThemeDark, setThemeLight } from '../../Store/reducer/config';
-import { setLogout } from '../../Store/reducer/userService';
+import { IAboutMe } from '../../Models/IAboutMe';
 import Btn from '../Button/Btn';
 import './header.sass';
 
-const Header: React.FC = () => {
-  const router = useHistory();
-  const { isAuth } = useAppSelector((state) => state.userService);
-  const dispatch = useAppDispatch();
-  const { aboutMe } = useAppSelector((state) => state.dataUsers);
-  const [active, setActive] = React.useState(false);
+interface IHeaderProps {
+  isAuth: boolean;
+  aboutMeList: IAboutMe;
+  handleLogout: () => void;
+  changeLightTheme: () => void;
+  changeDarkTheme: () => void;
+};
 
-  const handleClick = () => {
-    dispatch(setLogout());
-    router.push(RouteNames.LOGIN);
-  };
-
-  React.useEffect(() => {
-    dispatch(getInfoAboutMe());
-  }, []);
-
-  const changeLightTheme = () => {
-    dispatch(setThemeLight());
-    setActive(!active);
-  };
-
-  const changeDarkTheme = () => {
-    dispatch(setThemeDark());
-    setActive(active);
-  };
+const Header: React.FC<IHeaderProps> = ({ isAuth, aboutMeList, handleLogout, changeDarkTheme, changeLightTheme }) => {
 
   return (
     <header className={'header-main'}>
       <nav>
-        <img src={aboutMe.avatar} className={'header-main__img'} />
-        <a href={aboutMe.html_url} target="_blank" className={'header-main__link'}>{aboutMe.html_url}</a>
-        <h6 className={'header-main__text'}>{aboutMe.followers}</h6>
+        <img src={aboutMeList.avatar_url} className={'header-main__img'} />
+        <a href={aboutMeList.html_url} target="_blank" className={'header-main__link'}>{aboutMeList.html_url}</a>
+        <h6 className={'header-main__text'}>{aboutMeList.followers}</h6>
       </nav>
       <div>
         <Btn
@@ -57,7 +35,7 @@ const Header: React.FC = () => {
         >
           Тёмная тема
         </Btn>
-        {isAuth ? <Btn onClick={handleClick}>Выйти</Btn> : ''}
+        {isAuth ? <Btn onClick={handleLogout}>Выйти</Btn> : ''}
       </div>
     </header >
   );

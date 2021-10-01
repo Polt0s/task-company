@@ -1,19 +1,19 @@
 import React from 'react';
-import Cards from '../Components/Cards/Cards';
-import CompanyForm from '../Components/Form/CompanyForm';
-import Sidebar from '../Components/Sidebar/Sidebar';
+import CardsContainer from '../Components/Cards/CardsContainer';
+import CompanyFormContainer from '../Components/Form/CompanyFormContainer';
+import SidebarContainer from '../Components/Sidebar/SidebarContainer';
 
 const Main: React.FC = () => {
   return (
     <main className={'grid-main'}>
       <section className={'grid-main__content'}>
-        <Cards />
+        <CardsContainer />
       </section>
       <section className={'grid-main__menu'}>
-        <Sidebar />
+        <SidebarContainer />
       </section>
       <section className={'grid-main__form'}>
-        <CompanyForm />
+        <CompanyFormContainer />
       </section>
     </main>
   );

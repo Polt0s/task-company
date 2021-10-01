@@ -10,7 +10,7 @@ export const getInfoUser = () => async (dispatch: Dispatch): Promise<AxiosRespon
     const result = {
       name: response.data.name,
       company: response.data.company,
-      avatar: response.data.avatar_url,
+      avatar_url: response.data.avatar_url,
       followers: response.data.followers,
     };
     dispatch(setUser(result));

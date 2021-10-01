@@ -1,22 +1,16 @@
 import React from 'react';
 import Loader from '../Loader/Loader';
 import CardItem from './CardItem';
-import { getCompanyData } from '../../Api/getCompanyData';
-import useAppDispatch from '../../Hooks/useAppDispatch';
-import useAppSelector from '../../Hooks/useAppSelector';
-import { setSelected } from '../../Store/reducer/company';
 import './card.sass';
+import { ICompany } from '../../Models/ICompany';
 
-const Cards: React.FC = () => {
-  const company = useAppSelector(state => state.company.company);
-  const [isLoading, setIsLoading] = React.useState(true);
-  const dispatch = useAppDispatch();
+interface ICardsProps {
+  companyList: ICompany[];
+  changeSelectedPost: (event: number) => void;
+  isLoading: boolean;
+};
 
-  React.useEffect(() => {
-    dispatch(getCompanyData())
-    setIsLoading(false);
-  }, []);
-
+const Cards: React.FC<ICardsProps> = ({ companyList, changeSelectedPost, isLoading }) => {
   const changeAlertCard = () => alert('Меню для списка компаний');
   const changeAlertCardItem = () => alert('Меню для карточки');
 
@@ -31,22 +25,18 @@ const Cards: React.FC = () => {
     node.addEventListener('onContextMenu', changeAlertCardItem());
   };
 
-  const handleDataUser = (id: number) => {
-    dispatch(setSelected(id))
-  };
-
   return (
     <>
       {isLoading ? <Loader /> : (
         <div className={'card-block'} onContextMenu={onContextMenu}>
-          {company.map((item) => (
+          {companyList.map((item) => (
             <CardItem key={item.nameCompany}
               nameCompany={item.nameCompany}
               address={item.address}
               id={item.id}
               email={item.email}
               phone={item.phone}
-              onClick={handleDataUser}
+              onClick={changeSelectedPost}
               onContextMenu={onContextMenuItem}
               style={item.selected ? { background: 'lightblue' } : {}}
               selected={item.selected}
