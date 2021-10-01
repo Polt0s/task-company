@@ -4,6 +4,7 @@ import { getInfoAboutMe } from '../../Api/getDataUser';
 import useAppDispatch from '../../Hooks/useAppDispatch';
 import useAppSelector from '../../Hooks/useAppSelector';
 import { RouteNames } from '../../Router';
+import { setThemeDark, setThemeLight } from '../../Store/reducer/config';
 import { setLogout } from '../../Store/reducer/userService';
 import Btn from '../Button/Btn';
 import './header.sass';
@@ -13,16 +14,26 @@ const Header: React.FC = () => {
   const { isAuth } = useAppSelector((state) => state.userService);
   const dispatch = useAppDispatch();
   const { aboutMe } = useAppSelector((state) => state.dataUsers);
-
   const handleClick = () => {
-    console.log('test')
     dispatch(setLogout());
     router.push(RouteNames.LOGIN);
   };
 
+  const [active, setActive] = React.useState(false);
+
   React.useEffect(() => {
     dispatch(getInfoAboutMe());
   }, []);
+
+  const changeLightTheme = () => {
+    dispatch(setThemeLight());
+    setActive(!active);
+  };
+
+  const changeDarkTheme = () => {
+    dispatch(setThemeDark());
+    setActive(active);
+  };
 
   return (
     <header className={'header-main'}>
@@ -32,9 +43,23 @@ const Header: React.FC = () => {
         <h6 className={'header-main__text'}>{aboutMe.followers}</h6>
       </nav>
       <div>
+        <Btn
+          onFocus={(event) => event.target.style.border = '2px solid red'}
+          onBlur={(event) => event.target.style.border = 'none'}
+          onClick={changeLightTheme}
+        >
+          Светлая тема
+        </Btn>
+        <Btn
+          onClick={changeDarkTheme}
+          onFocus={(event) => event.target.style.border = '2px solid red'}
+          onBlur={(event) => event.target.style.border = 'none'}
+        >
+          Тёмная тема
+        </Btn>
         {isAuth ? <Btn onClick={handleClick}>Выйти</Btn> : ''}
       </div>
-    </header>
+    </header >
   );
 };
 

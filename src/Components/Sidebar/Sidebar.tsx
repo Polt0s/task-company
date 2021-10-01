@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import useAppSelector from '../../Hooks/useAppSelector';
 import { RouteNames } from '../../Router';
+import { removeDuplicate } from '../../utils/RemoveDuplicate';
 import Btn from '../Button/Btn';
 import './sidebar.sass';
 
@@ -12,7 +13,7 @@ const Sidebar: React.FC = () => {
 
   const onClick = () => {
     company.map((item) => item.selected ? result.push(item.nameCompany) : null);
-    console.log(result);
+    console.log(removeDuplicate(result));
   };
 
   return (
