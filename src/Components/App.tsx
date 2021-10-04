@@ -12,7 +12,7 @@ interface IAppProps {
 const App: React.FC<IAppProps> = ({ theme, configTheme }) => {
 
   return (
-    <div className={'grid-root'} style={{ backgroundColor: configTheme[theme] }}>
+    <div className={'grid-root'} data-testid="grid-root" style={{ backgroundColor: configTheme[theme] }}>
       <div className={'main-content'}>
         <HeaderContainer />
         <AppRouter />

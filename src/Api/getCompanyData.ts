@@ -1,14 +1,11 @@
-import axios, { AxiosResponse } from "axios"
+import axios from "axios"
 import { ICompany } from "../Models/ICompany";
-import { addCompany } from "../Store/reducer/company";
-import { Dispatch } from '@reduxjs/toolkit';
 
-export const getCompanyData = () => async (dispatch: Dispatch): Promise<AxiosResponse<ICompany[]>> => {
+export const getCompanyData = async () => {
   try {
     const response = await axios.get<ICompany[]>('./company.json');
-    dispatch(addCompany(response.data));
-    return response;
+    return response.data;
   } catch (err) {
-    throw new Error(`ошибка ${err}`)
-  }
+    throw new Error(`ошибка ${err}`);
+  };
 };

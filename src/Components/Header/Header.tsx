@@ -16,7 +16,7 @@ const Header: React.FC<IHeaderProps> = ({ isAuth, aboutMeList, handleLogout, cha
   return (
     <header className={'header-main'}>
       <nav>
-        <img src={aboutMeList.avatar_url} className={'header-main__img'} />
+        <img src={aboutMeList.avatar_url} className={'header-main__img'} alt={'avatar_url'} />
         <a href={aboutMeList.html_url} target="_blank" className={'header-main__link'}>{aboutMeList.html_url}</a>
         <h6 className={'header-main__text'}>{aboutMeList.followers}</h6>
       </nav>

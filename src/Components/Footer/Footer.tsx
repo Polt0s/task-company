@@ -5,7 +5,7 @@ import './footer.sass';
 const Footer: React.FC<{ userData: IUserInfo }> = ({ userData }) => {
   return (
     <footer className={'footer-main'}>
-      <img src={userData.avatar_url} className={'footer-main__img'} />
+      <img src={userData.avatar_url} className={'footer-main__img'} alt="user_avatar_url" />
       <h6 className={'footer-main__text'}>{userData.name}</h6>
       <h6 className={'footer-main__text'}>{userData.company}</h6>
       <h6 className={'footer-main__text'}>{userData.followers}</h6>

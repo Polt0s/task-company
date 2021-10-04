@@ -49,7 +49,7 @@ module.exports = {
     extensions: [".js", ".tsx", ".ts"],
   },
   mode: 'development',
-  entry: ["@babel/polyfill", "./src/index.tsx"],
+  entry: ["./src/index.tsx"],
   output: {
     path: path.resolve(__dirname, "build"),
     filename: `./js/${filename('js')}`,

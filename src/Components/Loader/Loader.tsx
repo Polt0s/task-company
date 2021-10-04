@@ -2,7 +2,7 @@ import React from 'react';
 import './loader.sass';
 
 const Loader: React.FC = () => (
-  <div className={'loader'}>
+  <div data-testid="loader" className={'loader'}>
     <div className={'loader__animation'}>
     </div>
   </div>

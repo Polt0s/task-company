@@ -28,7 +28,7 @@ const Cards: React.FC<ICardsProps> = ({ companyList, changeSelectedPost, isLoadi
   return (
     <>
       {isLoading ? <Loader /> : (
-        <div className={'card-block'} onContextMenu={onContextMenu}>
+        <div id="card-block" className={'card-block'} onContextMenu={onContextMenu}>
           {companyList.map((item) => (
             <CardItem key={item.nameCompany}
               nameCompany={item.nameCompany}

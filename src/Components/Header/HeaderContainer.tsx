@@ -3,8 +3,11 @@ import { useHistory } from 'react-router-dom';
 import { getInfoAboutMe } from '../../Api/getDataUser';
 import useAppDispatch from '../../Hooks/useAppDispatch';
 import useAppSelector from '../../Hooks/useAppSelector';
+import { useFetching } from '../../Hooks/useFetching';
+import { IAboutMe } from '../../Models/IAboutMe';
 import { RouteNames } from '../../Router';
 import { setThemeDark, setThemeLight } from '../../Store/reducer/config';
+import { setInfoAboutMe } from '../../Store/reducer/dataUser';
 import { setLogout } from '../../Store/reducer/userService';
 import Header from './Header';
 
@@ -14,6 +17,15 @@ const HeaderContainer: React.FC = () => {
   const { aboutMe } = useAppSelector((state) => state.dataUsers);
   const dispatch = useAppDispatch();
   const [active, setActive] = React.useState(false);
+  const [fetchAboutMe] = useFetching(async () => {
+    const response = await getInfoAboutMe();
+    const result: IAboutMe = {
+      avatar_url: response.avatar_url,
+      html_url: response.html_url,
+      followers: response.followers,
+    };
+    dispatch(setInfoAboutMe(result));
+  });
 
   const handleLogout = () => {
     dispatch(setLogout());
@@ -21,7 +33,7 @@ const HeaderContainer: React.FC = () => {
   };
 
   React.useEffect(() => {
-    dispatch(getInfoAboutMe());
+    fetchAboutMe();
   }, []);
 
   const changeLightTheme = () => {

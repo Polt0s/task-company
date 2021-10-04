@@ -15,9 +15,9 @@ const CompanyForm: React.FC<ICompanyFormProps> = ({ onSubmit, errorsList, handle
   return (
     <div className={'form-layout'}>
       <form onSubmit={onSubmit}>
-        <Input type="text" name="nameCompany" handleChange={handleChange} value={values.nameCompany} placeholder="Название компании" error={errorsList.nameCompany} />
+        <Input id="nameCompany" type="text" name="nameCompany" handleChange={handleChange} value={values.nameCompany} placeholder="название компании" error={errorsList.nameCompany} />
         <Input type="text" name="address" handleChange={handleChange} value={values.address} placeholder="адрес компании" error={errorsList.address} />
-        <Input type="text" name="email" handleChange={handleChange} value={values.email} placeholder="электронный адрес" error={errorsList.email} />
+        <Input type="email" name="email" handleChange={handleChange} value={values.email} placeholder="электронный адрес" error={errorsList.email} />
         <Input type="tel" name="phone" handleChange={handleChange} value={values.phone} placeholder="телефон компании" error={errorsList.phone} />
         <Btn style={{ margin: 5 }} type="submit">Отправить</Btn>
       </form>
