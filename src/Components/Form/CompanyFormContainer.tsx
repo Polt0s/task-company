@@ -12,6 +12,7 @@ const initialValues: ICompany = {
   address: '',
   email: '',
   phone: '',
+  id: 0,
 };
 
 const CompanyFormContainer: React.FC = () => {
@@ -23,7 +24,7 @@ const CompanyFormContainer: React.FC = () => {
   const onSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
     setValues(initialValues);
-    dispatch(addCompany([values, ...company]));
+    dispatch(addCompany([{ ...values, id: Date.now() }, ...company]));
   };
 
   return (
