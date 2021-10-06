@@ -19,7 +19,7 @@ const CardsContainer: React.FC = () => {
     fetchCards();
   }, []);
 
-  const changeSelectedPost = (id: number) => {
+  const changeSelectedPost = (id: number | undefined) => {
     dispatch(setSelected(id))
   };
 

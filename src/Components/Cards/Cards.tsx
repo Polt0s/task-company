@@ -6,7 +6,7 @@ import { ICompany } from '../../Models/ICompany';
 
 interface ICardsProps {
   companyList: ICompany[];
-  changeSelectedPost: (event: number) => void;
+  changeSelectedPost: (event: number | undefined) => void;
   isLoading: boolean;
 };
 
@@ -31,11 +31,7 @@ const Cards: React.FC<ICardsProps> = ({ companyList, changeSelectedPost, isLoadi
         <div id="card-block" className={'card-block'} onContextMenu={onContextMenu}>
           {companyList.map((item) => (
             <CardItem key={item.nameCompany}
-              nameCompany={item.nameCompany}
-              address={item.address}
-              id={item.id}
-              email={item.email}
-              phone={item.phone}
+              company={item}
               onClick={changeSelectedPost}
               onContextMenu={onContextMenuItem}
               style={item.selected ? { background: 'lightblue' } : {}}

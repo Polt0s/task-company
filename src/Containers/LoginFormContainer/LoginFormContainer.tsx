@@ -6,27 +6,30 @@ import { IUser } from '../../Models/IUser';
 import { RouteNames } from '../../Router';
 import { checkUser } from '../../Store/reducer/userService';
 import LoginForm from '../../Components/LoginForm/LoginForm';
+import * as yup from 'yup';
 
 const LoginFormContainer: React.FC = () => {
   const router = useHistory();
-  const [values, setValues] = React.useState<IUser>({ username: '', password: '' });
   const { error } = useAppSelector((state) => state.userService);
   const dispatch = useAppDispatch();
 
-  const onSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const onSubmit = (values: IUser) => {
     dispatch(checkUser(values.username, values.password));
     router.push(RouteNames.MAIN);
   };
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setValues({ ...values, [name]: value });
-  }
+  const initialValues: IUser = {
+    username: '',
+    password: '',
+  };
+
+  const validationSchema = yup.object({
+    username: yup.string().min(4, 'имя должно содержать не менее 4 символов').required('обязательное поле'),
+    password: yup.string().min(5, 'пароль не может быть меньше 6 символов').required('обязательное поле'),
+  });
 
   return (
-    <LoginForm onSubmit={onSubmit} handleChange={handleChange} error={error} values={values} />
+    <LoginForm onSubmit={onSubmit} error={error} initialValues={initialValues} validationSchema={validationSchema} />
   );
 };
 

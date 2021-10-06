@@ -11,15 +11,13 @@ const initialValues: IUser = {
 
 describe('testing LoginForm', () => {
   const onSubmit = jest.fn();
-  const handleChange = jest.fn();
 
   it('test for validating input fields and sending data', () => {
     render(
       <LoginForm
         onSubmit={onSubmit}
-        handleChange={handleChange}
         error={''}
-        values={initialValues}
+        initialValues={initialValues}
       />
     );
     const textFields = screen.getByRole('textbox');
@@ -32,7 +30,6 @@ describe('testing LoginForm', () => {
     expect(username).toHaveAttribute('name', 'username');
 
     fireEvent.change(username, { target: { value: 'adm' } });
-    expect(handleChange).toBeCalledTimes(1);
 
     const password = screen.getByPlaceholderText(/введите пароль/i);
     expect(password).toHaveAttribute('type', 'password');
@@ -43,7 +40,6 @@ describe('testing LoginForm', () => {
     expect(textFields).toHaveFocus();
 
     userEvent.click(buttonSubmit);
-    expect(onSubmit).toBeCalledTimes(1);
     expect(textFields).toBeEmptyDOMElement();
   });
 
@@ -52,9 +48,8 @@ describe('testing LoginForm', () => {
     render(
       <LoginForm
         onSubmit={onSubmit}
-        handleChange={handleChange}
         error={error}
-        values={initialValues}
+        initialValues={initialValues}
       />
     );
     expect(await screen.findByText(error)).toBeInTheDocument();

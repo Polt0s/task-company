@@ -1,34 +1,37 @@
 import React from 'react';
 import useAppDispatch from '../../Hooks/useAppDispatch';
 import useAppSelector from '../../Hooks/useAppSelector';
-import { useForm } from '../../Hooks/useForm';
 import { ICompany } from '../../Models/ICompany';
 import { addCompany } from '../../Store/reducer/company';
-import validateForm from '../../utils/ValidateForm';
+import * as yup from 'yup';
 import CompanyForm from '../../Components/CompanyForm/CompanyForm';
-
-const initialValues: ICompany = {
-  nameCompany: '',
-  address: '',
-  email: '',
-  phone: '',
-  id: 0,
-};
+import { onlyLetters, onlyNumbers } from '../../utils/RegExp';
 
 const CompanyFormContainer: React.FC = () => {
   const dispatch = useAppDispatch();
   const company = useAppSelector(state => state.company.company);
 
-  const { handleChange, values, errors, setValues } = useForm(validateForm, initialValues);
+  const initialValues: ICompany = {
+    nameCompany: '',
+    address: '',
+    email: '',
+    phone: '',
+    id: 0,
+  };
 
-  const onSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setValues(initialValues);
+  const onSubmit = (values: ICompany) => {
     dispatch(addCompany([{ ...values, id: Date.now() }, ...company]));
   };
 
+  const validationSchema = yup.object({
+    nameCompany: yup.string().matches(onlyLetters, 'имя компании не должно содержать цифры').required('обязательное поле'),
+    address: yup.string().min(6, 'адрес должен быть больше 6 символов').required('обязательное поле'),
+    email: yup.string().email('невалидный email'),
+    phone: yup.string().matches(onlyNumbers, 'недопустимые символы'),
+  });
+
   return (
-    <CompanyForm onSubmit={onSubmit} errorsList={errors} handleChange={handleChange} values={values} />
+    <CompanyForm onSubmit={onSubmit} validationSchema={validationSchema} initialValues={initialValues} />
   );
 };
 
