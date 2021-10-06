@@ -5,7 +5,7 @@ import useAppSelector from '../../Hooks/useAppSelector';
 import { useFetching } from '../../Hooks/useFetching';
 import { IUserInfo } from '../../Models/IUserInfo';
 import { setUser } from '../../Store/reducer/dataUser';
-import Footer from './Footer';
+import Footer from '../../Components/Footer/Footer';
 
 const FooterContainer: React.FC = () => {
   const dispatch = useAppDispatch();

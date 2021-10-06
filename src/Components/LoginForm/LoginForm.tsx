@@ -12,15 +12,15 @@ interface ILoginFormProps {
 };
 
 const LoginForm: React.FC<ILoginFormProps> = ({ onSubmit, handleChange, error, values }) => {
-  const errorRef = React.useRef<HTMLHeadingElement>(null);
+  const ref: React.RefObject<HTMLHeadingElement> = React.useRef<HTMLHeadingElement>(null);
 
   React.useEffect(() => {
-    errorRef.current = error;
+    ref.current = error;
   }, [error]);
 
   return (
     <form onSubmit={onSubmit}>
-      {error ? <h2 ref={errorRef} id="text-error" className={'text-error'}>{error}</h2> : ''}
+      {error ? <h2 ref={ref} id="text-error" className={'text-error'}>{error}</h2> : ''}
       <Input type="text" value={values.username} handleChange={handleChange} placeholder="Введите ваше имя" name="username" />
       <Input type="password" value={values.password} handleChange={handleChange} placeholder="Введите пароль" name="password" />
       <Btn type="submit" style={{ margin: 5 }}>Войти</Btn>

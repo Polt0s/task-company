@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import useAppSelector from '../../Hooks/useAppSelector';
 import { RouteNames } from '../../Router';
 import { removeDuplicate } from '../../utils/RemoveDuplicate';
-import Sidebar from './Sidebar';
+import Sidebar from '../../Components/Sidebar/Sidebar';
 
 const SidebarContainer: React.FC = () => {
   const router = useHistory();

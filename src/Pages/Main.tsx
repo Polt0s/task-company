@@ -1,7 +1,7 @@
 import React from 'react';
-import CardsContainer from '../Components/Cards/CardsContainer';
-import CompanyFormContainer from '../Components/Form/CompanyFormContainer';
-import SidebarContainer from '../Components/Sidebar/SidebarContainer';
+import CardsContainer from '../Containers/CardsContainer/CardsContainer';
+import CompanyFormContainer from '../Containers/CompanyFormContainer/CompanyFormContainer';
+import SidebarContainer from '../Containers/SidebarContainer/SidebarContainer';
 
 const Main: React.FC = () => {
   return (

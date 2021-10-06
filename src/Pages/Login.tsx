@@ -1,6 +1,5 @@
 import React from 'react';
-import LoginFormContainer from '../Components/Form/LoginFormContainer';
-import '../Components/index.sass';
+import LoginFormContainer from '../Containers/LoginFormContainer/LoginFormContainer';
 
 const Login: React.FC = () => {
   return (

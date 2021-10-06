@@ -5,7 +5,7 @@ import useAppSelector from "../../Hooks/useAppSelector";
 import { useFetching } from '../../Hooks/useFetching';
 import { ICompany } from '../../Models/ICompany';
 import { addCompany, setSelected } from '../../Store/reducer/company';
-import Cards from "./Cards"
+import Cards from "../../Components/Cards/Cards"
 
 const CardsContainer: React.FC = () => {
   const company = useAppSelector(state => state.company.company);

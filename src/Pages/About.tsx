@@ -1,5 +1,4 @@
 import React from 'react';
-import '../Components/index.sass';
 
 const About: React.FC = () => {
   return (

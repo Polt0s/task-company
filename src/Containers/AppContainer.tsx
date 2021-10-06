@@ -1,6 +1,6 @@
 import React from 'react';
 import useAppSelector from '../Hooks/useAppSelector';
-import App from './App';
+import App from '../Components/App';
 
 const configTheme = {
   light: 'white',

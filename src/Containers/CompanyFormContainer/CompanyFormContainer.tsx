@@ -5,7 +5,7 @@ import { useForm } from '../../Hooks/useForm';
 import { ICompany } from '../../Models/ICompany';
 import { addCompany } from '../../Store/reducer/company';
 import validateForm from '../../utils/ValidateForm';
-import CompanyForm from './CompanyForm';
+import CompanyForm from '../../Components/CompanyForm/CompanyForm';
 
 const initialValues: ICompany = {
   nameCompany: '',

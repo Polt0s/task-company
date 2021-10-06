@@ -5,7 +5,7 @@ import useAppSelector from '../../Hooks/useAppSelector';
 import { IUser } from '../../Models/IUser';
 import { RouteNames } from '../../Router';
 import { setAddUser } from '../../Store/reducer/userService';
-import LoginForm from './LoginForm';
+import LoginForm from '../../Components/LoginForm/LoginForm';
 
 const LoginFormContainer: React.FC = () => {
   const router = useHistory();
