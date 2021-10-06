@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios"
+import axios from "axios"
 import { IUser } from "../Models/IUser";
 
 export const authUserService = async () => {

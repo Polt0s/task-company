@@ -26,8 +26,7 @@ const companys: ICompany[] = [
 
 describe('Cards-component', () => {
   const changeSelectedPost = jest.fn();
-
-  it('test render cardItem', async () => {
+  it('test for successful data loading', async () => {
     render(
       <Cards companyList={companys} changeSelectedPost={changeSelectedPost} isLoading={false} />
     );
@@ -43,7 +42,7 @@ describe('Cards-component', () => {
     expect(changeSelectedPost).toBeCalledTimes(1);
   });
 
-  it('test render preloader', () => {
+  it('test for rejected data loading', () => {
     render(
       <Cards companyList={companys} changeSelectedPost={changeSelectedPost} isLoading={true} />
     );

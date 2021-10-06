@@ -14,7 +14,7 @@ describe('CompanyFormContainer', () => {
   const onSubmit = jest.fn();
   const handleChange = jest.fn();
 
-  it('render test textFields FormContainer', () => {
+  it('test for the correctness of filling in the fields and sending', () => {
     render(
       <CompanyForm
         onSubmit={onSubmit}
@@ -23,6 +23,7 @@ describe('CompanyFormContainer', () => {
         values={initialValues}
       />
     );
+
     const buttonSubmit = screen.getByRole('button', { name: 'Отправить' });
     expect(buttonSubmit).toBeInTheDocument();
 
@@ -57,7 +58,7 @@ describe('CompanyFormContainer', () => {
     expect(onSubmit).toBeCalledTimes(1);
   });
 
-  it('test error auth loginForm-component', async () => {
+  it('test for handling invalid input data', async () => {
     const initialValuesError = {
       nameCompany: 'только буквы',
       address: 'номер не может быть меньше 6 цифр',

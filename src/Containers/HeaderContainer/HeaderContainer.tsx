@@ -8,7 +8,7 @@ import { IAboutMe } from '../../Models/IAboutMe';
 import { RouteNames } from '../../Router';
 import { setThemeDark, setThemeLight } from '../../Store/reducer/config';
 import { setInfoAboutMe } from '../../Store/reducer/dataUser';
-import { setLogout } from '../../Store/reducer/userService';
+import { logoutUser } from '../../Store/reducer/userService';
 import Header from '../../Components/Header/Header';
 
 const HeaderContainer: React.FC = () => {
@@ -28,7 +28,7 @@ const HeaderContainer: React.FC = () => {
   });
 
   const handleLogout = () => {
-    dispatch(setLogout());
+    dispatch(logoutUser());
     router.push(RouteNames.LOGIN);
   };
 

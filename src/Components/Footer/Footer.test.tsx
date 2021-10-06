@@ -12,7 +12,7 @@ const userData: IUserInfo = {
 
 describe('footer-component test', () => {
 
-  it('test render userData', async () => {
+  it('test for correct data retrieval', async () => {
     render(<Footer userData={userData} />)
 
     expect(await screen.findByText(userData.name)).toBeInTheDocument();

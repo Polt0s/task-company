@@ -13,7 +13,7 @@ describe('testing LoginForm', () => {
   const onSubmit = jest.fn();
   const handleChange = jest.fn();
 
-  it('render test textFields loginForm-component', () => {
+  it('test for validating input fields and sending data', () => {
     render(
       <LoginForm
         onSubmit={onSubmit}
@@ -30,6 +30,7 @@ describe('testing LoginForm', () => {
     const username = screen.getByPlaceholderText(/введите ваше имя/i);
     expect(username).toHaveAttribute('type', 'text');
     expect(username).toHaveAttribute('name', 'username');
+
     fireEvent.change(username, { target: { value: 'adm' } });
     expect(handleChange).toBeCalledTimes(1);
 
@@ -46,7 +47,7 @@ describe('testing LoginForm', () => {
     expect(textFields).toBeEmptyDOMElement();
   });
 
-  it('test error auth loginForm-component', async () => {
+  it('test for handling invalid input data', async () => {
     const error = 'неверное имя пользователя или пароль';
     render(
       <LoginForm

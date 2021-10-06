@@ -5,7 +5,7 @@ import userEvent from "@testing-library/user-event";
 
 describe('Sidebar-component', () => {
 
-  it("test should render the menu", () => {
+  it("test for checking the rendering of elements and event calls", () => {
     const onClick = jest.fn();
     const handleRouter = jest.fn();
 

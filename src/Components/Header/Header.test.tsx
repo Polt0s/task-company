@@ -15,7 +15,7 @@ describe('Header-component text', () => {
   const changeDarkTheme = jest.fn();
   const handleLogout = jest.fn();
 
-  it('test items header-component not-authorized', async () => {
+  it('test for correct data retrieval and check props', async () => {
     render(<Header isAuth={false}
       aboutMeList={aboutMeList}
       handleLogout={handleLogout}
@@ -38,7 +38,7 @@ describe('Header-component text', () => {
     expect(changeDarkTheme).toBeCalledTimes(1);
   });
 
-  it('test items header-component authorized', async () => {
+  it('test to check the button to log out of an authorized user', async () => {
     render(
       <Header
         isAuth={true}

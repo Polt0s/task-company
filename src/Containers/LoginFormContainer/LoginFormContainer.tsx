@@ -4,7 +4,7 @@ import useAppDispatch from '../../Hooks/useAppDispatch';
 import useAppSelector from '../../Hooks/useAppSelector';
 import { IUser } from '../../Models/IUser';
 import { RouteNames } from '../../Router';
-import { setAddUser } from '../../Store/reducer/userService';
+import { checkUser } from '../../Store/reducer/userService';
 import LoginForm from '../../Components/LoginForm/LoginForm';
 
 const LoginFormContainer: React.FC = () => {
@@ -15,7 +15,7 @@ const LoginFormContainer: React.FC = () => {
 
   const onSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
-    dispatch(setAddUser(values.username, values.password));
+    dispatch(checkUser(values.username, values.password));
     router.push(RouteNames.MAIN);
   };
 

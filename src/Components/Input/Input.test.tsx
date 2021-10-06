@@ -5,12 +5,13 @@ import Input from "./Input";
 describe('test Input-component', () => {
   const handleChange = jest.fn();
 
-  it('testing props Input', () => {
+  it('text check validation props', () => {
     render(
       <Input name="test" handleChange={handleChange} placeholder="test-placeholder" value="" type="email" error="" id="test" />
     );
     const input = screen.getByRole('textbox');
     expect(input).toBeInTheDocument();
+
     expect(screen.getByTestId('test')).toBeInTheDocument();
     expect(input).toHaveAttribute('name', 'test');
     expect(input).toHaveAttribute('value', '');

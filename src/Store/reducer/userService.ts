@@ -33,7 +33,7 @@ const useUser = createSlice({
   }
 });
 
-export const setAddUser = (username: string, password: string) => async (dispatch: Dispatch) => {
+export const checkUser = (username: string, password: string) => async (dispatch: Dispatch) => {
   dispatch(useUser.actions.setLoading(true));
   setTimeout(async () => {
     const response = await authUserService();
@@ -46,10 +46,10 @@ export const setAddUser = (username: string, password: string) => async (dispatc
       dispatch(useUser.actions.setError('неверное имя пользователя или пароль'));
     }
     dispatch(useUser.actions.setLoading(false));
-  }, 1000)
+  }, 1000);
 };
 
-export const setLogout = () => async (dispatch: Dispatch) => {
+export const logoutUser = () => async (dispatch: Dispatch) => {
   localStorage.removeItem('auth');
   dispatch(useUser.actions.logout());
 };
