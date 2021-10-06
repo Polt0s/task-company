@@ -4,7 +4,7 @@ export interface ICompany {
   email: string;
   phone: string;
   id?: number;
-  onClick?: (event: React.MouseEvent) => void;
+  onClick?: (event: number) => void;
   selected?: boolean;
   style?: React.CSSProperties;
   onContextMenu?: (event: React.MouseEvent) => void
