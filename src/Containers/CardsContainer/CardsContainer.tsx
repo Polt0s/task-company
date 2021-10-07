@@ -7,7 +7,7 @@ import { ICompany } from '../../Models/ICompany';
 import { addCompany, setSelected } from '../../Store/reducer/company';
 import Cards from "../../Components/Cards/Cards"
 
-const CardsContainer: React.FC = () => {
+const CardsContainer: React.FC = React.memo(() => {
   const company = useAppSelector(state => state.company.company);
   const dispatch = useAppDispatch();
   const [fetchCards, isLoading] = useFetching(async () => {
@@ -16,10 +16,7 @@ const CardsContainer: React.FC = () => {
   });
 
   React.useEffect(() => {
-    setTimeout(() => {
-      fetchCards();
-    }, 2000)
-
+    fetchCards();
   }, []);
 
   const changeSelectedPost = (id: number | undefined) => {
@@ -29,6 +26,6 @@ const CardsContainer: React.FC = () => {
   return (
     <Cards companyList={company} changeSelectedPost={changeSelectedPost} isLoading={isLoading} />
   );
-};
+});
 
 export default CardsContainer;

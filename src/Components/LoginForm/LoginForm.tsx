@@ -19,11 +19,6 @@ interface ILoginFormProps {
 };
 
 const LoginForm: React.FC<ILoginFormProps> = ({ onSubmit, error, initialValues, validationSchema }) => {
-  const ref: React.RefObject<HTMLHeadingElement> = React.useRef<HTMLHeadingElement>(null);
-
-  React.useEffect(() => {
-    ref.current = error;
-  }, [error]);
 
   return (
     <Formik
@@ -34,7 +29,7 @@ const LoginForm: React.FC<ILoginFormProps> = ({ onSubmit, error, initialValues, 
     >
       {(formik) => (
         <Form style={{ width: '50%' }}>
-          {error ? <h2 ref={ref} id="text-error" className={'text-error'}>{error}</h2> : ''}
+          {error ? <h2 id="text-error" className={'text-error'}>{error}</h2> : ''}
           <Input
             type="text"
             value={formik.values.username}

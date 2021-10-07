@@ -15,8 +15,9 @@ const Cards: React.FC<ICardsProps> = ({ companyList, changeSelectedPost, isLoadi
   const changeAlertCardItem = () => alert('Меню для карточки');
 
   const onContextMenu = (event: React.MouseEvent) => {
+    event.preventDefault();
     const node = event.target;
-    node.addEventListener('contextmenu', changeAlertCard());
+    node.addEventListener("contextmenu", changeAlertCard());
   };
 
   const onContextMenuItem = (event: React.MouseEvent) => {

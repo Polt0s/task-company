@@ -1,13 +1,11 @@
 import React from 'react';
 
-export const useFetching = (callback: any): [() => Promise<void>, boolean] => {
-  const [isLoading, setIsLoading] = React.useState<boolean>(false);
+export const useFetching = (callback: () => Promise<void>): [() => void, boolean] => {
+  const [isLoading, setIsLoading] = React.useState<boolean>(true);
 
   const fetching = async () => {
-    setIsLoading(true);
-    const response = await callback();
+    callback();
     setIsLoading(false);
-    return response;
   };
 
   return [fetching, isLoading];

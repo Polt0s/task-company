@@ -1,6 +1,7 @@
 .grid-main {
   display: grid;
   grid-template-areas: "content content menu""content content form";
+  width: 100%;
 
   @media screen and (max-width: 1024px) {
     grid-template-areas: "menu""content""form";
@@ -22,7 +23,6 @@
     width: 100%;
     height: 100%;
     padding: 20px;
-
   }
 
   &__form {

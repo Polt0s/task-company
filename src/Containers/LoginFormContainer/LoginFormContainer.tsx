@@ -23,6 +23,8 @@ const LoginFormContainer: React.FC = () => {
     password: '',
   };
 
+  React.useEffect(() => { }, [error]);
+
   const validationSchema = yup.object({
     username: yup.string().min(4, 'имя должно содержать не менее 4 символов').required('обязательное поле'),
     password: yup.string().min(5, 'пароль не может быть меньше 6 символов').required('обязательное поле'),

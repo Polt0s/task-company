@@ -1,7 +1,7 @@
 import React from 'react';
 import './card.scss';
 import { ICompany } from '../../Models/ICompany';
-import { parityCheck } from '../../utils/ParityCheck';
+import { parityCheckNumber } from '../../utils/helpers/parityCheckNumber';
 
 interface ICardItemProps {
   company: ICompany;
@@ -14,7 +14,7 @@ interface ICardItemProps {
 const CardItem: React.FC<ICardItemProps> = ({ company, onClick, selected, ...props }) => {
   return (
     <article data-testid={company.id}
-      className={`card-item ${parityCheck(company.id) ? 'card-item__background' : ''}`}
+      className={`card-item ${parityCheckNumber(company.id) ? 'card-item__background' : ''}`}
       onClick={() => onClick(company.id)} {...props}
       style={selected ? { background: 'lightblue' } : {}}
     >
