@@ -16,13 +16,13 @@ const Cards: React.FC<ICardsProps> = ({ companyList, changeSelectedPost, isLoadi
 
   const onContextMenu = (event: React.MouseEvent) => {
     const node = event.target;
-    node.addEventListener('onContextMenu', changeAlertCard());
+    node.addEventListener('contextmenu', changeAlertCard());
   };
 
   const onContextMenuItem = (event: React.MouseEvent) => {
     event.stopPropagation();
     const node = event.target;
-    node.addEventListener('onContextMenu', changeAlertCardItem());
+    node.addEventListener('contextmenu', changeAlertCardItem());
   };
 
   return (
@@ -30,11 +30,10 @@ const Cards: React.FC<ICardsProps> = ({ companyList, changeSelectedPost, isLoadi
       {isLoading ? <Loader /> : (
         <div id="card-block" className={'card-block'} onContextMenu={onContextMenu}>
           {companyList.map((item) => (
-            <CardItem key={item.nameCompany}
+            <CardItem key={item.id}
               company={item}
               onClick={changeSelectedPost}
               onContextMenu={onContextMenuItem}
-              style={item.selected ? { background: 'lightblue' } : {}}
               selected={item.selected}
             />
           ))}

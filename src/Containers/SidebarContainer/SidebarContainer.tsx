@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import useAppSelector from '../../Hooks/useAppSelector';
 import { RouteNames } from '../../Router';
-import { removeDuplicate } from '../../utils/RemoveDuplicate';
+import { removeDuplicateElements } from '../../utils/removeDuplicateElements';
 import Sidebar from '../../Components/Sidebar/Sidebar';
 
 const SidebarContainer: React.FC = () => {
@@ -10,9 +10,12 @@ const SidebarContainer: React.FC = () => {
   const { company } = useAppSelector((state) => state.company);
   const result: Array<string> = [];
 
+  React.useEffect(() => {
+    company.map((item) => item.selected ? result.push(item.nameCompany) : null)
+  });
+
   const onClick = () => {
-    company.map((item) => item.selected ? result.push(item.nameCompany) : null);
-    console.log(removeDuplicate(result));
+    console.log(removeDuplicateElements(result));
   };
 
   const handleRouter = () => {

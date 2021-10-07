@@ -1,6 +1,7 @@
 import React from 'react';
 import './card.sass';
 import { ICompany } from '../../Models/ICompany';
+import { parityCheck } from '../../utils/ParityCheck';
 
 interface ICardItemProps {
   company: ICompany;
@@ -12,7 +13,11 @@ interface ICardItemProps {
 
 const CardItem: React.FC<ICardItemProps> = ({ company, onClick, selected, ...props }) => {
   return (
-    <article data-testid={company.id} className={'card-item'} onClick={() => onClick(company.id)} {...props}>
+    <article data-testid={company.id}
+      className={`card-item ${parityCheck(company.id) ? 'card-item__background' : ''}`}
+      onClick={() => onClick(company.id)} {...props}
+      style={selected ? { background: 'lightblue' } : {}}
+    >
       <p className={'card-item__text'}>Название компании: {company.nameCompany}</p>
       <p className={'card-item__text'}>Адрес: {company.address}</p>
       <p className={'card-item__text'}>Email: {company.email}</p>

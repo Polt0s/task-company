@@ -14,7 +14,7 @@ interface IDataUser {
   },
 }
 
-const initialState = {
+const initialState: IDataUser = {
   user: {
     name: '',
     company: '',
@@ -26,7 +26,7 @@ const initialState = {
     html_url: '',
     followers: 0,
   },
-} as IDataUser;
+};
 
 const useDataUser = createSlice({
   name: 'dataUsers',

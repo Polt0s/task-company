@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { getInfoAboutMe } from '../../Api/getDataUser';
+import { ApiDataUsers } from '../../Api/ApiDataUsers';
 import useAppDispatch from '../../Hooks/useAppDispatch';
 import useAppSelector from '../../Hooks/useAppSelector';
 import { useFetching } from '../../Hooks/useFetching';
@@ -18,7 +18,7 @@ const HeaderContainer: React.FC = () => {
   const dispatch = useAppDispatch();
   const [active, setActive] = React.useState(false);
   const [fetchAboutMe] = useFetching(async () => {
-    const response = await getInfoAboutMe();
+    const response = await ApiDataUsers.getInfoAboutMe();
     const result: IAboutMe = {
       avatar_url: response.avatar_url,
       html_url: response.html_url,

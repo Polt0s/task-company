@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface IConfig {
-  theme: { status: boolean, mode: 'light' | 'dark', color: '' },
+  theme: { status: boolean, mode: 'light' | 'dark' },
 };
 
-const initialState = {
+const initialState: IConfig = {
   theme: { status: false, mode: 'light' },
-} as IConfig;
+};
 
 const useConfig = createSlice({
   name: 'config',

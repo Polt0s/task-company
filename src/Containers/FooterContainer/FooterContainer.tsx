@@ -1,5 +1,5 @@
 import React from 'react';
-import { getInfoUser } from '../../Api/getDataUser';
+import { ApiDataUsers } from '../../Api/ApiDataUsers';
 import useAppDispatch from '../../Hooks/useAppDispatch';
 import useAppSelector from '../../Hooks/useAppSelector';
 import { useFetching } from '../../Hooks/useFetching';
@@ -11,7 +11,7 @@ const FooterContainer: React.FC = () => {
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.dataUsers);
   const [fetchInfoUser] = useFetching(async () => {
-    const response = await getInfoUser();
+    const response = await ApiDataUsers.getInfoUser();
     const result: IUserInfo = {
       name: response.name,
       company: response.company,

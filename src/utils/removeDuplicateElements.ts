@@ -1,4 +1,4 @@
-export const removeDuplicate = (arr: Array<string>) => {
+export const removeDuplicateElements = (arr: Array<string>) => {
   if (arr.length === 0) {
     return null;
   };

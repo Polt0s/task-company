@@ -8,7 +8,7 @@ interface ISidebarProps {
 };
 
 const Sidebar: React.FC<ISidebarProps> = ({ onClick, handleRouter }) => {
-
+  console.log('рендер sidebar!')
   return (
     <nav className={'sidebar-main'} data-testid="sidebar-main">
       <h2 className={'sidebar-main__text'} data-testid="sidebar-main__text" onClick={handleRouter}>О нас</h2>

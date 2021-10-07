@@ -5,9 +5,9 @@ interface IState {
   company: ICompany[]
 }
 
-const initialState = {
+const initialState: IState = {
   company: [],
-} as IState;
+};
 
 const useCompany = createSlice({
   name: 'company',

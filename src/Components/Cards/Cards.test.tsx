@@ -31,7 +31,7 @@ describe('Cards-component', () => {
       <Cards companyList={companys} changeSelectedPost={changeSelectedPost} isLoading={false} />
     );
 
-    const cardItem = await screen.findByTestId('Домофоны');
+    const cardItem = await screen.findByTestId(1);
     expect(cardItem).toBeInTheDocument();
 
     expect(await screen.findByText('Адрес: Москва')).toBeInTheDocument();
@@ -40,6 +40,8 @@ describe('Cards-component', () => {
 
     userEvent.click(cardItem);
     expect(changeSelectedPost).toBeCalledTimes(1);
+
+    expect(screen.queryByTestId('loader')).toBeNull();
   });
 
   it('test for rejected data loading', () => {

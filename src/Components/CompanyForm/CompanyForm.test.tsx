@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, act } from "@testing-library/react";
 import userEvent from '@testing-library/user-event';
 import CompanyForm from "./CompanyForm";
 
@@ -15,13 +15,14 @@ describe('CompanyFormContainer', () => {
   const handleChange = jest.fn();
 
   it('test for the correctness of filling in the fields and sending', () => {
-    render(
-      <CompanyForm
-        onSubmit={onSubmit}
-        initialValues={initialValues}
-      />
-    );
-
+    act(() => {
+      render(
+        <CompanyForm
+          onSubmit={onSubmit}
+          initialValues={initialValues}
+        />
+      );
+    });
     const buttonSubmit = screen.getByRole('button', { name: 'Отправить' });
     expect(buttonSubmit).toBeInTheDocument();
 
@@ -46,9 +47,10 @@ describe('CompanyFormContainer', () => {
     expect(textField_phone).toHaveAttribute('name', 'phone');
 
     expect(textField_nameCompany).not.toHaveFocus();
-    textField_nameCompany.focus();
+    act(() => {
+      textField_nameCompany.focus();
+    })
     expect(textField_nameCompany).toHaveFocus();
-
     // userEvent.click(buttonSubmit);
     // expect(onSubmit).toBeCalledTimes(1);
   });
