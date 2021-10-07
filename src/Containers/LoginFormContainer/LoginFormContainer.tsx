@@ -2,11 +2,11 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import useAppDispatch from '../../Hooks/useAppDispatch';
 import useAppSelector from '../../Hooks/useAppSelector';
-import { IUser } from '../../Models/IUser';
-import { RouteNames } from '../../Router';
+import { IUser } from '../../Types/IUser';
 import { checkUser } from '../../Store/reducer/userService';
 import LoginForm from '../../Components/LoginForm/LoginForm';
 import * as yup from 'yup';
+import { RouteNames } from '../../Components/AppRouter';
 
 const LoginFormContainer: React.FC = () => {
   const router = useHistory();

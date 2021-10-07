@@ -1,7 +1,7 @@
 import React from 'react';
 import useAppDispatch from '../../Hooks/useAppDispatch';
 import useAppSelector from '../../Hooks/useAppSelector';
-import { ICompany } from '../../Models/ICompany';
+import { ICompany } from '../../Types/ICompany';
 import { addCompany } from '../../Store/reducer/company';
 import * as yup from 'yup';
 import CompanyForm from '../../Components/CompanyForm/CompanyForm';

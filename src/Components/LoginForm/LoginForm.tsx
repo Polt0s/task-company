@@ -1,5 +1,5 @@
 import React from 'react';
-import { IUser } from '../../Models/IUser';
+import { IUser } from '../../Types/IUser';
 import Btn from '../Button/Btn';
 import Input from '../Input/Input';
 import './loginForm.scss';

@@ -2,7 +2,7 @@ import React from 'react';
 import Loader from '../Loader/Loader';
 import CardItem from './CardItem';
 import './card.scss';
-import { ICompany } from '../../Models/ICompany';
+import { ICompany } from '../../Types/ICompany';
 
 interface ICardsProps {
   companyList: ICompany[];
@@ -11,7 +11,7 @@ interface ICardsProps {
 };
 
 const Cards: React.FC<ICardsProps> = ({ companyList, changeSelectedPost, isLoading }) => {
-  const changeAlertCard = () => alert('Меню для списка компаний');
+  const changeAlertCard = () => { alert('Меню для списка компаний') };
   const changeAlertCardItem = () => alert('Меню для карточки');
 
   const onContextMenu = (event: React.MouseEvent) => {
@@ -21,9 +21,10 @@ const Cards: React.FC<ICardsProps> = ({ companyList, changeSelectedPost, isLoadi
   };
 
   const onContextMenuItem = (event: React.MouseEvent) => {
+    event.preventDefault();
     event.stopPropagation();
     const node = event.target;
-    node.addEventListener('contextmenu', changeAlertCardItem());
+    node.addEventListener('contextmenu', changeAlertCardItem);
   };
 
   return (

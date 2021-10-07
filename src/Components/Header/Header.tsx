@@ -1,5 +1,5 @@
 import React from 'react';
-import { IAboutMe } from '../../Models/IAboutMe';
+import { IAboutMe } from '../../Types/IAboutMe';
 import Btn from '../Button/Btn';
 import './header.scss';
 

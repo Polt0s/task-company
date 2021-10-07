@@ -1,7 +1,7 @@
 import React from "react";
 import { fireEvent, render, screen, act } from "@testing-library/react";
 import LoginForm from "./LoginForm";
-import { IUser } from "../../Models/IUser";
+import { IUser } from "../../Types/IUser";
 import userEvent from "@testing-library/user-event";
 
 const initialValues: IUser = {

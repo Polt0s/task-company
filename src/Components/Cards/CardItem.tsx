@@ -1,6 +1,6 @@
 import React from 'react';
 import './card.scss';
-import { ICompany } from '../../Models/ICompany';
+import { ICompany } from '../../Types/ICompany';
 import { parityCheckNumber } from '../../utils/helpers/parityCheckNumber';
 
 interface ICardItemProps {

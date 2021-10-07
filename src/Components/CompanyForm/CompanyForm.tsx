@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICompany } from '../../Models/ICompany';
+import { ICompany } from '../../Types/ICompany';
 import Btn from '../Button/Btn';
 import Input from '../Input/Input';
 import { Formik, Form, FormikHelpers } from 'formik';

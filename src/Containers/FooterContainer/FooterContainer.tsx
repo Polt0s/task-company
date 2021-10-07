@@ -3,7 +3,7 @@ import { ApiDataUsers } from '../../Api/ApiDataUsers';
 import useAppDispatch from '../../Hooks/useAppDispatch';
 import useAppSelector from '../../Hooks/useAppSelector';
 import { useFetching } from '../../Hooks/useFetching';
-import { IUserInfo } from '../../Models/IUserInfo';
+import { IUserInfo } from '../../Types/IUserInfo';
 import { setUser } from '../../Store/reducer/dataUser';
 import Footer from '../../Components/Footer/Footer';
 
