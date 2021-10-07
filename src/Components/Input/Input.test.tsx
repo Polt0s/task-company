@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, act } from "@testing-library/react";
 import Input from "./Input";
 
 describe('test Input-component', () => {
@@ -24,7 +24,9 @@ describe('test Input-component', () => {
 
     expect(screen.getByPlaceholderText('test-placeholder'));
 
-    fireEvent.change(input, { target: { value: 'dd' } });
+    act(() => {
+      fireEvent.change(input, { target: { value: 'dd' } });
+    });
 
     expect(handleChange).toBeCalledTimes(1);
 

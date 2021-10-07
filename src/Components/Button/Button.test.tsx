@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import Btn from "./Btn";
 import userEvent from "@testing-library/user-event";
 
@@ -27,7 +27,9 @@ describe('test Btn-component', () => {
 
     expect(button).toHaveStyle('width: 100%');
 
-    userEvent.click(button);
+    act(() => {
+      userEvent.click(button);
+    });
 
     expect(onClick).toBeCalledTimes(1);
 

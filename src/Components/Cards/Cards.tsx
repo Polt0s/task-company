@@ -11,21 +11,17 @@ interface ICardsProps {
 };
 
 const Cards: React.FC<ICardsProps> = ({ companyList, changeSelectedPost, isLoading }) => {
-  const changeAlertCard = () => { alert('Меню для списка компаний') };
-  const changeAlertCardItem = () => alert('Меню для карточки');
 
-  const onContextMenu = (event: React.MouseEvent) => {
+  const onContextMenu = React.useCallback((event: React.MouseEvent) => {
     event.preventDefault();
-    const node = event.target;
-    node.addEventListener("contextmenu", changeAlertCard());
-  };
+    alert('Меню для списка компаний');
+  }, []);
 
-  const onContextMenuItem = (event: React.MouseEvent) => {
+  const onContextMenuItem = React.useCallback((event: React.MouseEvent) => {
     event.preventDefault();
     event.stopPropagation();
-    const node = event.target;
-    node.addEventListener('contextmenu', changeAlertCardItem);
-  };
+    alert('Меню для карточки');
+  }, []);
 
   return (
     <>

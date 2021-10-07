@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import Sidebar from './Sidebar';
 import userEvent from "@testing-library/user-event";
 
@@ -22,10 +22,15 @@ describe('Sidebar-component', () => {
 
     expect(navbar).toContainElement(link);
 
-    userEvent.click(buttonList);
-    expect(onClick).toBeCalledTimes(1);
+    act(() => {
+      userEvent.click(buttonList);
+      expect(onClick).toBeCalledTimes(1);
+    });
 
-    userEvent.click(linkAboutUs);
+    act(() => {
+      userEvent.click(linkAboutUs);
+    });
+
     expect(handleRouter).toBeCalledTimes(1);
   });
 });

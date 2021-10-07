@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen, act } from "@testing-library/react";
+import { fireEvent, render, screen, act, cleanup } from "@testing-library/react";
 import LoginForm from "./LoginForm";
 import { IUser } from "../../Types/IUser";
 import userEvent from "@testing-library/user-event";
@@ -11,17 +11,16 @@ const initialValues: IUser = {
 
 describe('testing LoginForm', () => {
   const onSubmit = jest.fn();
+  afterEach(cleanup);
 
   it('test for validating input fields and sending data', () => {
-    act(() => {
-      render(
-        <LoginForm
-          onSubmit={onSubmit}
-          error={''}
-          initialValues={initialValues}
-        />
-      );
-    });
+    render(
+      <LoginForm
+        onSubmit={onSubmit}
+        error={''}
+        initialValues={initialValues}
+      />
+    );
 
     const textFields = screen.getByRole('textbox');
     const buttonSubmit = screen.getByRole('button', { name: /войти/i });
@@ -37,6 +36,7 @@ describe('testing LoginForm', () => {
     expect(username).toHaveAttribute('name', 'username');
 
     act(() => {
+      fireEvent.blur(username);
       fireEvent.change(username, { target: { value: 'adm' } });
     })
 

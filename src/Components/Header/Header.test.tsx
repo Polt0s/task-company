@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import Header from "./Header";
 import { IAboutMe } from "../../Types/IAboutMe";
 import userEvent from "@testing-library/user-event";
@@ -34,10 +34,16 @@ describe('Header-component text', () => {
     const buttonLightTheme = screen.getByRole('button', { name: /Светлая тема/i });
     const buttonDarkTheme = screen.getByRole('button', { name: /тёмная тема/i });
 
-    userEvent.click(buttonLightTheme);
+    act(() => {
+      userEvent.click(buttonLightTheme);
+    });
+
     expect(changeLightTheme).toBeCalledTimes(1);
 
-    userEvent.click(buttonDarkTheme);
+    act(() => {
+      userEvent.click(buttonDarkTheme);
+    });
+
     expect(changeDarkTheme).toBeCalledTimes(1);
   });
 
@@ -54,7 +60,10 @@ describe('Header-component text', () => {
 
     const butttonClose = await screen.findByRole('button', { name: /выйти/i });
 
-    userEvent.click(butttonClose);
+    act(() => {
+      userEvent.click(butttonClose);
+    });
+
     expect(handleLogout).toBeCalledTimes(1);
   });
 });
