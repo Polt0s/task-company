@@ -1,6 +1,6 @@
 import React from 'react';
 import { IUserInfo } from '../../Models/IUserInfo';
-import './footer.sass';
+import './footer.scss';
 
 const Footer: React.FC<{ userData: IUserInfo }> = ({ userData }) => {
   return (

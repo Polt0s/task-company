@@ -1,5 +1,5 @@
 import React from 'react';
-import './card.sass';
+import './card.scss';
 import { ICompany } from '../../Models/ICompany';
 import { parityCheck } from '../../utils/ParityCheck';
 

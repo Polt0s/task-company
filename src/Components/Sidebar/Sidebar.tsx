@@ -1,6 +1,6 @@
 import React from 'react';
 import Btn from '../Button/Btn';
-import './sidebar.sass';
+import './sidebar.scss';
 
 interface ISidebarProps {
   onClick: () => void;

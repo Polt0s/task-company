@@ -24,11 +24,13 @@ describe('test Btn-component', () => {
     expect(onBlur).not.toBeCalledTimes(1);
 
     expect(button).toHaveAttribute('type', 'submit');
+
     expect(button).toHaveStyle('width: 100%');
 
     userEvent.click(button);
 
     expect(onClick).toBeCalledTimes(1);
+
     expect(onFocus).toBeCalledTimes(1);
 
   });
@@ -37,6 +39,7 @@ describe('test Btn-component', () => {
     render(<Btn disabled={true} />);
 
     const button = screen.getByRole('button');
+
     expect(button).toBeDisabled();
   });
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import { IAboutMe } from '../../Models/IAboutMe';
 import Btn from '../Button/Btn';
-import './header.sass';
+import './header.scss';
 
 interface IHeaderProps {
   isAuth: boolean;

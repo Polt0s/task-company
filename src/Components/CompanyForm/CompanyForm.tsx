@@ -5,6 +5,7 @@ import Input from '../Input/Input';
 import { Formik, Form, FormikHelpers } from 'formik';
 import StringSchema, { RequiredStringSchema } from 'yup/lib/string';
 import { OptionalObjectSchema } from 'yup/lib/object';
+import './companyForm.scss';
 
 interface ICompanyFormProps {
   onSubmit: (values: ICompany, formikHelpers: FormikHelpers<ICompany>) => void;

@@ -24,8 +24,11 @@ describe('Header-component text', () => {
     />);
 
     expect(screen.queryByRole('button', { name: /выйти/i })).toBeNull();
+
     expect(await screen.findByText(aboutMeList.html_url)).toBeInTheDocument();
+
     expect(await screen.findByText(aboutMeList.followers)).toBeInTheDocument();
+
     expect(screen.getByAltText(/avatar_url/i)).toHaveClass('header-main__img');
 
     const buttonLightTheme = screen.getByRole('button', { name: /Светлая тема/i });

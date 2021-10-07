@@ -1,0 +1,34 @@
+.grid-main {
+  display: grid;
+  grid-template-areas: "content content menu""content content form";
+
+  @media screen and (max-width: 1024px) {
+    grid-template-areas: "menu""content""form";
+  }
+
+  &__content {
+    grid-area: content;
+    width: 100%;
+    height: 100%;
+    border-right: 2px solid teal;
+
+    @media screen and (max-width: 1024px) {
+      border: none;
+    }
+  }
+
+  &__menu {
+    grid-area: menu;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+  }
+
+  &__form {
+    grid-area: form;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid teal;
+  }
+}

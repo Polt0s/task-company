@@ -1,0 +1,19 @@
+@import './variable';
+
+.grid-root {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  @media screen and (max-width: 1024px) {
+    height: 100vh;
+  }
+}

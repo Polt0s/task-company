@@ -22,13 +22,18 @@ describe('testing LoginForm', () => {
         />
       );
     });
+
     const textFields = screen.getByRole('textbox');
     const buttonSubmit = screen.getByRole('button', { name: /войти/i });
+
     expect(textFields).toBeInTheDocument();
+
     expect(buttonSubmit).toBeInTheDocument();
 
     const username = screen.getByPlaceholderText(/введите ваше имя/i);
+
     expect(username).toHaveAttribute('type', 'text');
+
     expect(username).toHaveAttribute('name', 'username');
 
     act(() => {
@@ -36,18 +41,23 @@ describe('testing LoginForm', () => {
     })
 
     const password = screen.getByPlaceholderText(/введите пароль/i);
+
     expect(password).toHaveAttribute('type', 'password');
+
     expect(password).toHaveAttribute('name', 'password');
 
     expect(textFields).not.toHaveFocus();
+
     act(() => {
       textFields.focus();
     });
+
     expect(textFields).toHaveFocus();
 
     act(() => {
       userEvent.click(buttonSubmit);
     });
+
     expect(textFields).toBeEmptyDOMElement();
   });
 

@@ -2,10 +2,11 @@ import React from 'react';
 import { IUser } from '../../Models/IUser';
 import Btn from '../Button/Btn';
 import Input from '../Input/Input';
-import '../index.sass';
+import './loginForm.scss';
 import { Formik, Form, FormikHelpers } from 'formik';
 import { RequiredStringSchema } from 'yup/lib/string';
 import { OptionalObjectSchema } from 'yup/lib/object';
+
 
 interface ILoginFormProps {
   onSubmit: (values: IUser, formikHelpers: FormikHelpers<IUser>) => void;

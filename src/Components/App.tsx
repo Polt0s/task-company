@@ -2,7 +2,7 @@ import React from 'react';
 import AppRouter from './AppRouter';
 import FooterContainer from '../Containers/FooterContainer/FooterContainer';
 import HeaderContainer from '../Containers/HeaderContainer/HeaderContainer';
-import './index.sass';
+import './app.scss';
 
 interface IAppProps {
   theme: 'light' | 'dark';

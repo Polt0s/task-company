@@ -2,6 +2,7 @@ import { createSlice, Dispatch } from "@reduxjs/toolkit";
 import { ApiAuthUserService } from "../../Api/ApiAuthUserService";
 import { v4 as uuidv4 } from 'uuid';
 import { IUser } from "../../Models/IUser";
+import LocalStorage from "../../LocalStorage";
 
 interface IConfig {
   error: string,
@@ -41,7 +42,7 @@ export const checkUser = (username: string, password: string) => async (dispatch
     const dataUsers = response.find(user => user.username === username && user.password === password);
     if (dataUsers) {
       const token = uuidv4();
-      localStorage.setItem('auth', token);
+      LocalStorage.setItem('auth', token);
       dispatch(useUser.actions.setAuth());
     } else {
       dispatch(useUser.actions.setError('неверное имя пользователя или пароль'));
@@ -51,7 +52,7 @@ export const checkUser = (username: string, password: string) => async (dispatch
 };
 
 export const logoutUser = () => async (dispatch: Dispatch) => {
-  localStorage.removeItem('auth');
+  LocalStorage.removeItem('auth');
   dispatch(useUser.actions.logout());
 };
 

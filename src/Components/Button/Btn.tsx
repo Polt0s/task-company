@@ -1,5 +1,5 @@
 import React from 'react';
-import './button.sass';
+import './button.scss';
 
 const Btn: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ children, type, style, onClick, disabled, onFocus, onBlur }) => {
   return (

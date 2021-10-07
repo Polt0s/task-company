@@ -1,5 +1,6 @@
 import React from 'react';
 import LoginFormContainer from '../Containers/LoginFormContainer/LoginFormContainer';
+import '../Components/variable.scss';
 
 const Login: React.FC = () => {
   return (

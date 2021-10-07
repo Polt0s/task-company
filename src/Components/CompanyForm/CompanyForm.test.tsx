@@ -1,6 +1,5 @@
 import React from "react";
-import { render, screen, fireEvent, act } from "@testing-library/react";
-import userEvent from '@testing-library/user-event';
+import { render, screen, act } from "@testing-library/react";
 import CompanyForm from "./CompanyForm";
 
 const initialValues = {
@@ -12,7 +11,6 @@ const initialValues = {
 
 describe('CompanyFormContainer', () => {
   const onSubmit = jest.fn();
-  const handleChange = jest.fn();
 
   it('test for the correctness of filling in the fields and sending', () => {
     act(() => {
@@ -23,7 +21,9 @@ describe('CompanyFormContainer', () => {
         />
       );
     });
+
     const buttonSubmit = screen.getByRole('button', { name: 'Отправить' });
+
     expect(buttonSubmit).toBeInTheDocument();
 
     const textField_nameCompany = screen.getByTestId('nameCompany');
@@ -54,24 +54,4 @@ describe('CompanyFormContainer', () => {
     // userEvent.click(buttonSubmit);
     // expect(onSubmit).toBeCalledTimes(1);
   });
-
-  // it('test for handling invalid input data', async () => {
-  //   const initialValuesError = {
-  //     nameCompany: 'только буквы',
-  //     address: 'номер не может быть меньше 6 цифр',
-  //     email: 'невалидный email',
-  //     phone: 'только цифры',
-  //   }
-  //   render(
-  //     <CompanyForm
-  //       onSubmit={onSubmit}
-  //       initialValues={initialValues}
-  //       validationSchema={{initialValuesError}}
-  //     />
-  //   );
-  //   expect(await screen.findByText(/только буквы/i)).toBeInTheDocument();
-  //   expect(await screen.findByText(/номер не может быть меньше 6 цифр/i)).toBeInTheDocument();
-  //   expect(await screen.findByText(/невалидный email/i)).toBeInTheDocument();
-  //   expect(await screen.findByText(/только цифры/i)).toBeInTheDocument();
-  // });
 });

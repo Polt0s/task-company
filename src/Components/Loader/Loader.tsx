@@ -1,5 +1,5 @@
 import React from 'react';
-import './loader.sass';
+import './loader.scss';
 
 const Loader: React.FC = () => (
   <div data-testid="loader" className={'loader'}>
