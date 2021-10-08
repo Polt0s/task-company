@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import useAppSelector from '../../Hooks/useAppSelector';
-import { removeDuplicateElements } from '../../utils/helpers/removeDuplicateElements';
+import { removeDuplicateElemInArray } from '../../utils/helpers/removeDuplicateElemInArray';
 import Sidebar from '../../Components/Sidebar/Sidebar';
 import { RouteNames } from '../../Components/AppRouter';
 
@@ -19,7 +19,7 @@ const SidebarContainer: React.FC = React.memo(() => {
   }, [company]);
 
   const onClick = () => {
-    console.log(removeDuplicateElements(result));
+    console.log(removeDuplicateElemInArray(result));
   };
 
   const handleRouter = () => {

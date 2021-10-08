@@ -1,7 +1,7 @@
 import React from "react";
 import { screen, render } from "@testing-library/react";
 import Footer from "./Footer";
-import { IUserInfo } from "../../Types/IUserInfo";
+import { IUserInfo } from "../../Types/index";
 
 const userData: IUserInfo = {
   name: 'Dan Abramov',

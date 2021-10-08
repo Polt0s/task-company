@@ -2,7 +2,7 @@ import React from 'react';
 import Loader from '../Loader/Loader';
 import CardItem from './CardItem';
 import './card.scss';
-import { ICompany } from '../../Types/ICompany';
+import { ICompany } from '../../Types/index';
 
 interface ICardsProps {
   companyList: ICompany[];
@@ -32,7 +32,6 @@ const Cards: React.FC<ICardsProps> = ({ companyList, changeSelectedPost, isLoadi
               company={item}
               onClick={changeSelectedPost}
               onContextMenu={onContextMenuItem}
-              selected={item.selected}
             />
           ))}
         </div>

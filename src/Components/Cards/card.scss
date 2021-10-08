@@ -20,8 +20,8 @@
     cursor: pointer;
   }
 
-  &:last-child {
-    background-color: yellow;
+  &:nth-child(2n) {
+    background-color: lightgreen;
   }
 
   &__text {
@@ -30,9 +30,5 @@
     line-height: 18px;
     color: $color-black-main;
     margin: 5px 0;
-  }
-
-  &__background {
-    background-color: lightgreen;
   }
 }

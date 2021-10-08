@@ -1,5 +1,5 @@
 import React from 'react';
-import { IUser } from '../../Types/IUser';
+import { IUser } from '../../Types/index';
 import Btn from '../Button/Btn';
 import Input from '../Input/Input';
 import './loginForm.scss';
@@ -13,8 +13,8 @@ interface ILoginFormProps {
   error: string;
   initialValues: IUser;
   validationSchema?: OptionalObjectSchema<{
-    username: RequiredStringSchema<string | undefined, Record<string, any>>;
-    password: RequiredStringSchema<string | undefined, Record<string, any>>;
+    username: RequiredStringSchema<string | undefined, Record<string, undefined>>;
+    password: RequiredStringSchema<string | undefined, Record<string, undefined>>;
   }>
 };
 

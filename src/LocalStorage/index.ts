@@ -12,3 +12,11 @@ export default class LocalStorage {
     localStorage.removeItem(key);
   };
 };
+
+// export class AuthLocalStorage extends LocalStorage {
+
+//   static isAuth() {
+//    const response =  this.getItem('auth');
+//   return response === true
+//   };
+// };

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ICompany } from "../../Types/ICompany";
+import { ICompany } from "../../Types/index";
 
 interface IState {
   company: ICompany[]

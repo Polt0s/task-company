@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, act } from "@testing-library/react";
 import Header from "./Header";
-import { IAboutMe } from "../../Types/IAboutMe";
+import { IAboutMe } from "../../Types/index";
 import userEvent from "@testing-library/user-event";
 
 const aboutMeList: IAboutMe = {

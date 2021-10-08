@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICompany } from '../../Types/ICompany';
+import { ICompany } from '../../Types/index';
 import Btn from '../Button/Btn';
 import Input from '../Input/Input';
 import { Formik, Form, FormikHelpers } from 'formik';
@@ -11,10 +11,10 @@ interface ICompanyFormProps {
   onSubmit: (values: ICompany, formikHelpers: FormikHelpers<ICompany>) => void;
   initialValues: ICompany;
   validationSchema?: OptionalObjectSchema<{
-    nameCompany: RequiredStringSchema<string | undefined, Record<string, any>>;
-    address: RequiredStringSchema<string | undefined, Record<string, any>>;
-    email: StringSchema<string | undefined, Record<string, any>, string | undefined>;
-    phone: StringSchema<string | undefined, Record<string, any>, string | undefined>;
+    nameCompany: RequiredStringSchema<string | undefined, Record<string, undefined>>;
+    address: RequiredStringSchema<string | undefined, Record<string, undefined>>;
+    email: StringSchema<string | undefined, Record<string, undefined>, string | undefined>;
+    phone: StringSchema<string | undefined, Record<string, undefined>, string | undefined>;
   }>
 };
 

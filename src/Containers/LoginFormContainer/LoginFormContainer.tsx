@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import useAppDispatch from '../../Hooks/useAppDispatch';
 import useAppSelector from '../../Hooks/useAppSelector';
-import { IUser } from '../../Types/IUser';
+import { IUser } from '../../Types/index';
 import { checkUser } from '../../Store/reducer/userService';
 import LoginForm from '../../Components/LoginForm/LoginForm';
 import * as yup from 'yup';

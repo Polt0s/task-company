@@ -3,7 +3,7 @@ import { ApiCompany } from '../../Api/ApiCompany';
 import useAppDispatch from "../../Hooks/useAppDispatch";
 import useAppSelector from "../../Hooks/useAppSelector";
 import { useFetching } from '../../Hooks/useFetching';
-import { ICompany } from '../../Types/ICompany';
+import { ICompany } from '../../Types/index';
 import { addCompany, setSelected } from '../../Store/reducer/company';
 import Cards from "../../Components/Cards/Cards"
 

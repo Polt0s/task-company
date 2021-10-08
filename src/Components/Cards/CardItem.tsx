@@ -1,22 +1,20 @@
 import React from 'react';
 import './card.scss';
-import { ICompany } from '../../Types/ICompany';
-import { parityCheckNumber } from '../../utils/helpers/parityCheckNumber';
+import { ICompany } from '../../Types/index';
 
 interface ICardItemProps {
   company: ICompany;
   onClick: (event: number | undefined) => void;
-  selected: boolean | undefined;
   onContextMenu?: (event: React.MouseEvent) => void;
   style?: React.CSSProperties;
 };
 
-const CardItem: React.FC<ICardItemProps> = ({ company, onClick, selected, ...props }) => {
+const CardItem: React.FC<ICardItemProps> = ({ company, onClick, ...props }) => {
   return (
     <article data-testid={company.id}
-      className={`card-item ${parityCheckNumber(company.id) ? 'card-item__background' : ''}`}
+      className={`card-item`}
       onClick={() => onClick(company.id)} {...props}
-      style={selected ? { background: 'lightblue' } : {}}
+      style={company.selected ? { background: 'lightblue' } : {}}
     >
       <p className={'card-item__text'}>Название компании: {company.nameCompany}</p>
       <p className={'card-item__text'}>Адрес: {company.address}</p>

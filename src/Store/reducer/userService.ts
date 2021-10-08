@@ -1,7 +1,7 @@
 import { createSlice, Dispatch } from "@reduxjs/toolkit";
 import { ApiAuthUserService } from "../../Api/ApiAuthUserService";
 import { v4 as uuidv4 } from 'uuid';
-import { IUser } from "../../Types/IUser";
+import { IUser } from "../../Types/index";
 import LocalStorage from "../../LocalStorage";
 
 interface IConfig {
