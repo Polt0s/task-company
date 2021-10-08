@@ -4,7 +4,7 @@ export const useFetching = (callback: () => Promise<void>): [() => void, boolean
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
 
   const fetching = async () => {
-    callback();
+    await callback();
     setIsLoading(false);
   };
 

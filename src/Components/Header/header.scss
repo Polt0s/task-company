@@ -1,5 +1,3 @@
-@import '../../index.scss';
-
 .header-main {
   width: 100%;
   height: 100px;
@@ -16,7 +14,7 @@
     text-decoration: underline;
 
     &:hover {
-      color: $main-purple;
+      color: #b5b5f1;
     }
   }
 
@@ -28,10 +26,8 @@
 
   &__text,
   &__link {
-    @include main-font;
     font-size: 20px;
     line-height: 20px;
-    color: $color-black-main;
 
     @media screen and (max-width: 1024px) {
       font-size: 14px;

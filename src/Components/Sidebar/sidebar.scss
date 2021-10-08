@@ -1,19 +1,15 @@
-@import '../../index.scss';
-
 .sidebar-main {
   display: flex;
   flex-direction: column;
 
   &__text {
-    @include main-font;
     font-size: 22px;
     line-height: 22px;
     margin: 10px 0;
-    color: $color-black-main;
     cursor: pointer;
 
     &:hover {
-      color: $main-purple;
+      color: #b5b5f1;
     }
   }
 }

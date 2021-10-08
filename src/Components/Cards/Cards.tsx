@@ -1,7 +1,7 @@
 import React from 'react';
 import Loader from '../Loader/Loader';
 import CardItem from './CardItem';
-import './card.scss';
+import './Card.scss';
 import { ICompany } from '../../Types/index';
 
 interface ICardsProps {

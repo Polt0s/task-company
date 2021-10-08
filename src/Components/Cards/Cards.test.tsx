@@ -5,7 +5,7 @@ import { ICompany } from "../../Types/index";
 import Cards from "./Cards";
 
 jest.mock("axios");
-const companys: ICompany[] = [
+const company: ICompany[] = [
   {
     nameCompany: "Ололошка",
     address: "Москва",
@@ -27,7 +27,7 @@ describe('Cards', () => {
 
   it('check for successful data loading', async () => {
     render(
-      <Cards companyList={companys} changeSelectedPost={changeSelectedPost} isLoading={false} />
+      <Cards companyList={company} changeSelectedPost={changeSelectedPost} isLoading={false} />
     );
 
     const loader = screen.queryByTestId('loader');
@@ -55,7 +55,7 @@ describe('Cards', () => {
 
   it('check for rejected data loading', () => {
     render(
-      <Cards companyList={companys} changeSelectedPost={changeSelectedPost} isLoading={true} />
+      <Cards companyList={company} changeSelectedPost={changeSelectedPost} isLoading={true} />
     );
 
     const cards = screen.queryByTestId('card-block');

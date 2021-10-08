@@ -1,4 +1,4 @@
-import { IUser } from "../Types/IUser";
+import { IUser } from "../Types/index";
 import ApiService from "./ApiServise";
 
 export class ApiAuthUserService extends ApiService {

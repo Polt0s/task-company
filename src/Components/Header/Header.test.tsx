@@ -58,10 +58,10 @@ describe('Header', () => {
       />
     );
 
-    const butttonClose = await screen.findByRole('button', { name: /выйти/i });
+    const buttonClose = await screen.findByRole('button', { name: /выйти/i });
 
     act(() => {
-      userEvent.click(butttonClose);
+      userEvent.click(buttonClose);
     });
 
     expect(handleLogout).toBeCalledTimes(1);

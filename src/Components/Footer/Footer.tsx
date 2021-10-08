@@ -1,6 +1,6 @@
 import React from 'react';
 import { IUserInfo } from '../../Types/index';
-import './footer.scss';
+import './Footer.scss';
 
 const Footer: React.FC<{ userData: IUserInfo }> = ({ userData }) => {
   const test = localStorage.auth = 2;

@@ -1,18 +1,15 @@
-@import '../../index.scss';
-
 .btn-main {
-  @include main-font;
   display: block;
   position: relative;
   text-align: center;
   border: none;
   height: 40px;
-  box-shadow: $main-shadow;
+  box-shadow: 0px 2px 6px rgba(38, 53, 104, 0.25);
   box-sizing: border-box;
   font-size: 16px;
   line-height: 16px;
   cursor: pointer;
-  background-color: $main-purple;
+  background-color: #b5b5f1;
   padding: 5px 16px;
   border-radius: 10px;
 

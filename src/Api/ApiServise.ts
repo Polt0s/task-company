@@ -4,7 +4,7 @@ export default class ApiService {
 
   static async apiGet<T>(path: string) {
     try {
-      const response = await axios.get(path);
+      const response = await axios.get<T>(path);
       return response.data;
     } catch (err) {
       throw new Error(`ошибка ${err}`)

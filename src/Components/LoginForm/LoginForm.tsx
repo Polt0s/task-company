@@ -2,7 +2,7 @@ import React from 'react';
 import { IUser } from '../../Types/index';
 import Btn from '../Button/Btn';
 import Input from '../Input/Input';
-import './loginForm.scss';
+import './LoginForm.scss';
 import { Formik, Form, FormikHelpers } from 'formik';
 import { RequiredStringSchema } from 'yup/lib/string';
 import { OptionalObjectSchema } from 'yup/lib/object';

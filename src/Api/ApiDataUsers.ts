@@ -1,5 +1,4 @@
-import { IUserInfo } from "../Types/IUserInfo";
-import { IAboutMe } from "../Types/IAboutMe";
+import { IUserInfo, IAboutMe } from "../Types/index";
 import ApiService from "./ApiServise";
 
 export class ApiDataUsers extends ApiService {

@@ -1,4 +1,4 @@
-import { ICompany } from "../Types/ICompany";
+import { ICompany } from "../Types/index";
 import ApiService from './ApiServise';
 
 export class ApiCompany extends ApiService {
