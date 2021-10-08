@@ -1,7 +1,6 @@
 import React from "react";
 import { render, screen, act, fireEvent, cleanup } from "@testing-library/react";
 import CompanyForm from "./CompanyForm";
-import userEvent from "@testing-library/user-event";
 
 const initialValues = {
   nameCompany: '',
@@ -10,56 +9,58 @@ const initialValues = {
   phone: '',
 };
 
-describe('CompanyFormContainer', () => {
+describe('CompanyForm', () => {
   const onSubmit = jest.fn();
   afterEach(cleanup)
 
-  it('test for the correctness of filling in the fields and sending', () => {
-    render(
-      <CompanyForm
-        onSubmit={onSubmit}
-        initialValues={initialValues}
-      />
-    );
+  it('check for the correctness of filling in the fields and sending', async () => {
+    act(() => {
+      render(
+        <CompanyForm
+          onSubmit={onSubmit}
+          initialValues={initialValues}
+        />
+      );
+    });
 
-    const buttonSubmit = screen.getByRole('button', { name: 'Отправить' });
+    const buttonSubmit = await screen.findByRole('button', { name: 'Отправить' });
 
     expect(buttonSubmit).toBeInTheDocument();
 
-    const textField_nameCompany = screen.getByTestId('nameCompany');
+    const textField_nameCompany = await screen.findByTestId('nameCompany');
     expect(textField_nameCompany).toBeInTheDocument();
     expect(textField_nameCompany).toHaveAttribute('type', 'text');
     expect(textField_nameCompany).toHaveAttribute('name', 'nameCompany');
 
-    act(() => {
+    await act(async () => {
       fireEvent.blur(textField_nameCompany);
       fireEvent.change(textField_nameCompany, { target: { value: "123" } });
     });
 
-    const textField_address = screen.getByTestId('address');
+    const textField_address = await screen.findByTestId('address');
     expect(textField_address).toBeInTheDocument();
     expect(textField_address).toHaveAttribute('type', 'text');
     expect(textField_address).toHaveAttribute('name', 'address');
 
-    const textField_email = screen.getByTestId('email');
+    const textField_email = await screen.findByTestId('email');
     expect(textField_email).toBeInTheDocument();
     expect(textField_email).toHaveAttribute('type', 'email');
     expect(textField_email).toHaveAttribute('name', 'email');
 
-    const textField_phone = screen.getByTestId('phone');
+    const textField_phone = await screen.findByTestId('phone');
     expect(textField_phone).toBeInTheDocument();
     expect(textField_phone).toHaveAttribute('type', 'tel');
     expect(textField_phone).toHaveAttribute('name', 'phone');
 
     expect(textField_nameCompany).not.toHaveFocus();
 
-    act(() => {
-      textField_nameCompany.focus();
+    await act(async () => {
+      (textField_nameCompany).focus();
     });
 
     expect(textField_nameCompany).toHaveFocus();
 
-    act(() => {
+    await act(async () => {
       fireEvent.click(buttonSubmit);
     });
 

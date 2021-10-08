@@ -9,38 +9,40 @@ const initialValues: IUser = {
   password: 'admin',
 };
 
-describe('testing LoginForm', () => {
+describe('LoginForm', () => {
   const onSubmit = jest.fn();
   afterEach(cleanup);
 
-  it('test for validating input fields and sending data', () => {
-    render(
-      <LoginForm
-        onSubmit={onSubmit}
-        error={''}
-        initialValues={initialValues}
-      />
-    );
+  it('check for validating input fields and sending data', async () => {
+    act(() => {
+      render(
+        <LoginForm
+          onSubmit={onSubmit}
+          error={''}
+          initialValues={initialValues}
+        />
+      );
+    });
 
-    const textFields = screen.getByRole('textbox');
-    const buttonSubmit = screen.getByRole('button', { name: /войти/i });
+    const textFields = await screen.findByRole('textbox');
+    const buttonSubmit = await screen.findByRole('button', { name: /войти/i });
 
     expect(textFields).toBeInTheDocument();
 
     expect(buttonSubmit).toBeInTheDocument();
 
-    const username = screen.getByPlaceholderText(/введите ваше имя/i);
+    const username = await screen.findByPlaceholderText(/введите ваше имя/i);
 
     expect(username).toHaveAttribute('type', 'text');
 
     expect(username).toHaveAttribute('name', 'username');
 
-    act(() => {
+    await act(async () => {
       fireEvent.blur(username);
       fireEvent.change(username, { target: { value: 'adm' } });
     })
 
-    const password = screen.getByPlaceholderText(/введите пароль/i);
+    const password = await screen.findByPlaceholderText(/введите пароль/i);
 
     expect(password).toHaveAttribute('type', 'password');
 
@@ -48,20 +50,20 @@ describe('testing LoginForm', () => {
 
     expect(textFields).not.toHaveFocus();
 
-    act(() => {
+    await act(async () => {
       textFields.focus();
     });
 
     expect(textFields).toHaveFocus();
 
-    act(() => {
+    await act(async () => {
       userEvent.click(buttonSubmit);
     });
 
     expect(textFields).toBeEmptyDOMElement();
   });
 
-  it('test for handling invalid input data', async () => {
+  it('check for handling invalid input data', async () => {
     const error = 'неверное имя пользователя или пароль';
     act(() => {
       render(

@@ -10,9 +10,9 @@ const userData: IUserInfo = {
   followers: 68949,
 };
 
-describe('footer-component test', () => {
+describe('Footer', () => {
 
-  it('test for correct data retrieval', async () => {
+  it('check for correct data retrieval', async () => {
     render(<Footer userData={userData} />);
 
     expect(await screen.findByText(userData.name)).toBeInTheDocument();

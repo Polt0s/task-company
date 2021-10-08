@@ -10,12 +10,12 @@ const aboutMeList: IAboutMe = {
   followers: 1,
 };
 
-describe('Header-component text', () => {
+describe('Header', () => {
   const changeLightTheme = jest.fn();
   const changeDarkTheme = jest.fn();
   const handleLogout = jest.fn();
 
-  it('test for correct data retrieval and check props', async () => {
+  it('check for correct data retrieval and check props', async () => {
     render(<Header isAuth={false}
       aboutMeList={aboutMeList}
       handleLogout={handleLogout}
@@ -47,7 +47,7 @@ describe('Header-component text', () => {
     expect(changeDarkTheme).toBeCalledTimes(1);
   });
 
-  it('test to check the button to log out of an authorized user', async () => {
+  it('check the exit button', async () => {
     render(
       <Header
         isAuth={true}

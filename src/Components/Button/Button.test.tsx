@@ -3,12 +3,12 @@ import { render, screen, act } from "@testing-library/react";
 import Btn from "./Btn";
 import userEvent from "@testing-library/user-event";
 
-describe('test Btn-component', () => {
+describe('Button', () => {
   const onClick = jest.fn();
   const onFocus = jest.fn();
   const onBlur = jest.fn();
 
-  it('button check props', () => {
+  it('check button props', () => {
     render(
       <Btn
         onClick={onClick}
@@ -37,7 +37,7 @@ describe('test Btn-component', () => {
 
   });
 
-  it('button lock test', () => {
+  it('check button is disabled', () => {
     render(<Btn disabled={true} />);
 
     const button = screen.getByRole('button');

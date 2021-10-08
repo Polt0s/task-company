@@ -2,9 +2,9 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import Loader from './Loader';
 
-describe('text Loader', () => {
+describe('Loader', () => {
 
-  it('availability test loader', async () => {
+  it('check element', async () => {
     render(<Loader />);
 
     const loader = screen.getByTestId('loader');

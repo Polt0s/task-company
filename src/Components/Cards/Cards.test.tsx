@@ -22,15 +22,20 @@ const companys: ICompany[] = [
   },
 ];
 
-describe('Cards-component', () => {
+describe('Cards', () => {
   const changeSelectedPost = jest.fn();
 
-  it('test for successful data loading', async () => {
+  it('check for successful data loading', async () => {
     render(
       <Cards companyList={companys} changeSelectedPost={changeSelectedPost} isLoading={false} />
     );
 
+    const loader = screen.queryByTestId('loader');
+
+    expect(loader).toBeNull();
+
     const cardItem = await screen.findByTestId(1);
+
     expect(cardItem).toBeInTheDocument();
 
     expect(await screen.findByText('Адрес: Москва')).toBeInTheDocument();
@@ -48,7 +53,7 @@ describe('Cards-component', () => {
     expect(screen.queryByTestId('loader')).toBeNull();
   });
 
-  it('test for rejected data loading', () => {
+  it('check for rejected data loading', () => {
     render(
       <Cards companyList={companys} changeSelectedPost={changeSelectedPost} isLoading={true} />
     );

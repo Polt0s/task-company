@@ -2,10 +2,10 @@ import React from "react";
 import { fireEvent, render, screen, act } from "@testing-library/react";
 import Input from "./Input";
 
-describe('test Input-component', () => {
+describe('Input', () => {
   const handleChange = jest.fn();
 
-  it('text check validation props', () => {
+  it('check validation props', () => {
     render(
       <Input name="test" handleChange={handleChange} placeholder="test-placeholder" value="" type="email" error="" id="test" />
     );
