@@ -40,6 +40,10 @@ describe('Cards', () => {
 
     expect(changeSelectedPost).toBeCalledTimes(1);
 
+    const loader = screen.queryByTestId('loader');
+
+    expect(loader).toBeNull();
+
   });
 
   it('check for rejected data loading', () => {
@@ -48,7 +52,9 @@ describe('Cards', () => {
     );
 
     const cards = screen.queryByTestId('card-block');
+    const loader = screen.queryByTestId('loader');
 
+    expect(loader).toBeInTheDocument();
     expect(cards).toBeNull();
   });
 });

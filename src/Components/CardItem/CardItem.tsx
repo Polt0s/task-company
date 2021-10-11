@@ -15,10 +15,10 @@ export const CardItem: React.FC<ICardItemProps> = ({ company, onClick }) => {
       onClick={() => onClick(company.id)}
       style={company.selected ? { background: 'lightblue' } : {}}
     >
-      <p className={'card-item__text'}>Название компании: {company.nameCompany}</p>
-      <p className={'card-item__text'}>Адрес: {company.address}</p>
-      <p className={'card-item__text'}>Email: {company.email}</p>
-      <p className={'card-item__text'}>Телефон: {company.phone}</p>
+      <p className={cl.cardItem__text}>Название компании: {company.nameCompany}</p>
+      <p className={cl.cardItem__text}>Адрес: {company.address}</p>
+      <p className={cl.cardItem__text}>Email: {company.email}</p>
+      <p className={cl.cardItem__text}>Телефон: {company.phone}</p>
     </article>
   );
 };

@@ -14,7 +14,6 @@ const company: ICompany = {
 };
 
 describe('CardsItem', () => {
-  const changeSelectedPost = jest.fn();
   const onClick = jest.fn();
 
   it('check card details', async () => {
