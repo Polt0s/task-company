@@ -4,10 +4,10 @@ import useAppSelector from '../../Hooks/useAppSelector';
 import { ICompany } from '../../Types/index';
 import { addCompany } from '../../Store/reducer/company';
 import * as yup from 'yup';
-import CompanyForm from '../../Components/CompanyForm/CompanyForm';
+import { CompanyForm } from '../../Components';
 import { onlyLetters, onlyNumbers } from '../../utils/RegExp';
 
-const CompanyFormContainer: React.FC = () => {
+export const CompanyFormContainer: React.FC = () => {
   const dispatch = useAppDispatch();
   const company = useAppSelector(state => state.company.company);
 
@@ -34,5 +34,3 @@ const CompanyFormContainer: React.FC = () => {
     <CompanyForm onSubmit={onSubmit} validationSchema={validationSchema} initialValues={initialValues} />
   );
 };
-
-export default CompanyFormContainer;

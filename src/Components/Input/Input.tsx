@@ -13,7 +13,7 @@ interface InputProps {
   id?: string;
 }
 
-const Input: React.FC<InputProps> = ({ placeholder, value, handleChange, type, error, name, id, onBlur, onFocus }) => {
+export const Input: React.FC<InputProps> = ({ placeholder, value, handleChange, type, error, name, id, onBlur, onFocus }) => {
   return (
     <>
       <input
@@ -33,5 +33,3 @@ const Input: React.FC<InputProps> = ({ placeholder, value, handleChange, type, e
     </>
   );
 };
-
-export default Input;

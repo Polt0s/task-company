@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button/Button';
+import { Button } from '../Button';
 import cl from './Sidebar.module.scss';
 
 interface ISidebarProps {
@@ -7,7 +7,7 @@ interface ISidebarProps {
   handleRouter: () => void;
 };
 
-const Sidebar: React.FC<ISidebarProps> = ({ onClick, handleRouter }) => {
+export const Sidebar: React.FC<ISidebarProps> = ({ onClick, handleRouter }) => {
 
   return (
     <nav className={cl.sidebarMain} data-testid="sidebar-main">
@@ -18,4 +18,3 @@ const Sidebar: React.FC<ISidebarProps> = ({ onClick, handleRouter }) => {
   );
 };
 
-export default Sidebar;

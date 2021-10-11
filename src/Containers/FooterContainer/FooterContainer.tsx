@@ -5,9 +5,9 @@ import useAppSelector from '../../Hooks/useAppSelector';
 import { useFetching } from '../../Hooks/useFetching';
 import { IUserInfo } from '../../Types/index';
 import { setUser } from '../../Store/reducer/dataUser';
-import Footer from '../../Components/Footer/Footer';
+import { Footer } from '../../Components';
 
-const FooterContainer: React.FC = () => {
+export const FooterContainer: React.FC = () => {
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.dataUsers);
   const [fetchInfoUser] = useFetching(async () => {
@@ -29,5 +29,3 @@ const FooterContainer: React.FC = () => {
     <Footer userData={user} />
   );
 };
-
-export default FooterContainer;

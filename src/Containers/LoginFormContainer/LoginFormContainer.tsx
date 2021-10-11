@@ -4,11 +4,11 @@ import useAppDispatch from '../../Hooks/useAppDispatch';
 import useAppSelector from '../../Hooks/useAppSelector';
 import { IUser } from '../../Types/index';
 import { checkUser } from '../../Store/reducer/userService';
-import LoginForm from '../../Components/LoginForm/LoginForm';
+import { LoginForm } from '../../Components';
 import * as yup from 'yup';
 import { RouteNames } from '../../Router';
 
-const LoginFormContainer: React.FC = () => {
+export const LoginFormContainer: React.FC = () => {
   const router = useHistory();
   const { error } = useAppSelector((state) => state.userService);
   const dispatch = useAppDispatch();
@@ -32,5 +32,3 @@ const LoginFormContainer: React.FC = () => {
     <LoginForm onSubmit={onSubmit} error={error} initialValues={initialValues} validationSchema={validationSchema} />
   );
 };
-
-export default LoginFormContainer;

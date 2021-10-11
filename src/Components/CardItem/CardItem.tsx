@@ -8,7 +8,7 @@ interface ICardItemProps {
   onContextMenu?: (event: React.MouseEvent) => void;
 };
 
-const CardItem: React.FC<ICardItemProps> = ({ company, onClick }) => {
+export const CardItem: React.FC<ICardItemProps> = ({ company, onClick }) => {
   return (
     <article data-testid={company.id}
       className={cl.cardItem}
@@ -22,5 +22,3 @@ const CardItem: React.FC<ICardItemProps> = ({ company, onClick }) => {
     </article>
   );
 };
-
-export default CardItem;

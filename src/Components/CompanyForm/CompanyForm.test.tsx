@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, act, fireEvent, cleanup } from "@testing-library/react";
-import CompanyForm from "./CompanyForm";
+import { CompanyForm } from "./CompanyForm";
 
 const initialValues = {
   nameCompany: '',

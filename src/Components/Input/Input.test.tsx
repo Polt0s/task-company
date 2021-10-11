@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen, act } from "@testing-library/react";
-import Input from "./Input";
+import { Input } from "./Input";
 
 describe('Input', () => {
   const handleChange = jest.fn();

@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, act } from "@testing-library/react";
-import Sidebar from './Sidebar';
+import { Sidebar } from './Sidebar';
 import userEvent from "@testing-library/user-event";
 
 describe('Sidebar', () => {

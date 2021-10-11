@@ -1,10 +1,8 @@
 import React from 'react';
-import CardsContainer from '../../Containers/CardsContainer/CardsContainer';
-import CompanyFormContainer from '../../Containers/CompanyFormContainer/CompanyFormContainer';
-import SidebarContainer from '../../Containers/SidebarContainer/SidebarContainer';
+import { CardsContainer, SidebarContainer, CompanyFormContainer } from '../../Containers';
 import './Main.scss';
 
-const Main: React.FC = () => {
+export const MainPage: React.FC = () => {
   return (
     <main className={'grid-main'}>
       <section className={'grid-main__content'}>
@@ -19,5 +17,3 @@ const Main: React.FC = () => {
     </main>
   );
 };
-
-export default Main;

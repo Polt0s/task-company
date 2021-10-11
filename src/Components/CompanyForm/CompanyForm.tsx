@@ -1,7 +1,7 @@
 import React from 'react';
 import { ICompany } from '../../Types/index';
-import Button from '../Button/Button';
-import Input from '../Input/Input';
+import { Button } from '../Button';
+import { Input } from '../Input/Input';
 import { Formik, Form, FormikHelpers } from 'formik';
 import StringSchema, { RequiredStringSchema } from 'yup/lib/string';
 import { OptionalObjectSchema } from 'yup/lib/object';
@@ -18,7 +18,7 @@ interface ICompanyFormProps {
   }>
 };
 
-const CompanyForm: React.FC<ICompanyFormProps> = ({ onSubmit, initialValues, validationSchema }) => {
+export const CompanyForm: React.FC<ICompanyFormProps> = ({ onSubmit, initialValues, validationSchema }) => {
 
   return (
     <div className={cl.formLayout}>
@@ -82,5 +82,3 @@ const CompanyForm: React.FC<ICompanyFormProps> = ({ onSubmit, initialValues, val
     </div>
   );
 };
-
-export default CompanyForm;

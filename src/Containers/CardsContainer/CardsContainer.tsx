@@ -5,9 +5,9 @@ import useAppSelector from "../../Hooks/useAppSelector";
 import { useFetching } from '../../Hooks/useFetching';
 import { ICompany } from '../../Types/index';
 import { addCompany, setSelected } from '../../Store/reducer/company';
-import Cards from "../../Components/Cards/Cards"
+import { Cards } from '../../Components';
 
-const CardsContainer: React.FC = React.memo(() => {
+export const CardsContainer: React.FC = React.memo(() => {
   const company = useAppSelector(state => state.company.company);
   const dispatch = useAppDispatch();
   const [fetchCards, isLoading] = useFetching(async () => {
@@ -27,5 +27,3 @@ const CardsContainer: React.FC = React.memo(() => {
     <Cards companyList={company} changeSelectedPost={changeSelectedPost} isLoading={isLoading} />
   );
 });
-
-export default CardsContainer;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.scss';
 
-const About: React.FC = () => {
+export const AboutPage: React.FC = () => {
   return (
     <div className={'layout-about'}>
       <h1>Здесь будет информация о нас!</h1>
@@ -9,4 +9,4 @@ const About: React.FC = () => {
   );
 };
 
-export default About;
+export default AboutPage;

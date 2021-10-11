@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen, act, cleanup } from "@testing-library/react";
-import LoginForm from "./LoginForm";
+import { LoginForm } from "./LoginForm";
 import { IUser } from "../../Types/index";
 import userEvent from "@testing-library/user-event";
 

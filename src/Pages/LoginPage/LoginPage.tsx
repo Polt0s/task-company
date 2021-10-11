@@ -1,8 +1,8 @@
 import React from 'react';
-import LoginFormContainer from '../../Containers/LoginFormContainer/LoginFormContainer';
+import { LoginFormContainer } from '../../Containers';
 import './Login.scss';
 
-const Login: React.FC = () => {
+export const LoginPage: React.FC = () => {
   return (
     <section className={'layout-login'}>
       <h1>Войти в систему</h1>
@@ -10,5 +10,3 @@ const Login: React.FC = () => {
     </section>
   );
 };
-
-export default Login;

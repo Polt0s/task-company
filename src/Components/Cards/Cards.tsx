@@ -1,6 +1,6 @@
 import React from 'react';
-import Loader from '../Loader/Loader';
-import CardItem from '../CardItem/CardItem';
+import { Loader } from '../Loader';
+import { CardItem } from '../CardItem';
 import cl from './Card.module.scss';
 import { ICompany } from '../../Types/index';
 
@@ -10,7 +10,7 @@ interface ICardsProps {
   isLoading: boolean;
 };
 
-const Cards: React.FC<ICardsProps> = ({ companyList, changeSelectedPost, isLoading }) => {
+export const Cards: React.FC<ICardsProps> = ({ companyList, changeSelectedPost, isLoading }) => {
 
   const onContextMenu = React.useCallback((event: React.MouseEvent) => {
     event.preventDefault();
@@ -40,4 +40,3 @@ const Cards: React.FC<ICardsProps> = ({ companyList, changeSelectedPost, isLoadi
   );
 };
 
-export default Cards;

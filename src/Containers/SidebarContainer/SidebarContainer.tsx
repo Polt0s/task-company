@@ -2,10 +2,10 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import useAppSelector from '../../Hooks/useAppSelector';
 import { removeDuplicateElemInArray } from './removeDuplicateElemInArray';
-import Sidebar from '../../Components/Sidebar/Sidebar';
+import { Sidebar } from '../../Components';
 import { RouteNames } from '../../Router';
 
-const SidebarContainer: React.FC = React.memo(() => {
+export const SidebarContainer: React.FC = React.memo(() => {
   const router = useHistory();
   const { company } = useAppSelector((state) => state.company);
   const result: Array<string> = [];
@@ -30,5 +30,3 @@ const SidebarContainer: React.FC = React.memo(() => {
     <Sidebar onClick={onClick} handleRouter={handleRouter} />
   );
 });
-
-export default SidebarContainer;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { IUser } from '../../Types/index';
-import Button from '../Button/Button';
-import Input from '../Input/Input';
+import { Button } from '../Button';
+import { Input } from '../Input';
 import cl from './LoginForm.module.scss';
 import { Formik, Form, FormikHelpers } from 'formik';
 import { RequiredStringSchema } from 'yup/lib/string';
@@ -18,7 +18,7 @@ interface ILoginFormProps {
   }>
 };
 
-const LoginForm: React.FC<ILoginFormProps> = ({ onSubmit, error, initialValues, validationSchema }) => {
+export const LoginForm: React.FC<ILoginFormProps> = ({ onSubmit, error, initialValues, validationSchema }) => {
 
   return (
     <Formik
@@ -58,5 +58,3 @@ const LoginForm: React.FC<ILoginFormProps> = ({ onSubmit, error, initialValues, 
     </Formik>
   );
 };
-
-export default LoginForm;

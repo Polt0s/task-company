@@ -2,7 +2,7 @@ import React from 'react';
 import { IUserInfo } from '../../Types/index';
 import cl from './Footer.module.scss';
 
-const Footer: React.FC<{ userData: IUserInfo }> = ({ userData }) => {
+export const Footer: React.FC<{ userData: IUserInfo }> = ({ userData }) => {
 
   return (
     <footer className={cl.footerMain}>
@@ -13,5 +13,3 @@ const Footer: React.FC<{ userData: IUserInfo }> = ({ userData }) => {
     </footer>
   );
 };
-
-export default Footer;

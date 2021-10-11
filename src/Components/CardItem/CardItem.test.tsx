@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, act } from "@testing-library/react";
 import { ICompany } from "../../Types";
-import CardItem from "./CardItem";
+import { CardItem } from "./CardItem";
 import userEvent from "@testing-library/user-event";
 
 jest.mock("axios");

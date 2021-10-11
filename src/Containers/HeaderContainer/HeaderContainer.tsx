@@ -9,9 +9,9 @@ import { RouteNames } from '../../Router';
 import { setThemeDark, setThemeLight } from '../../Store/reducer/config';
 import { setInfoAboutMe } from '../../Store/reducer/dataUser';
 import { logoutUser } from '../../Store/reducer/userService';
-import Header from '../../Components/Header/Header';
+import { Header } from '../../Components';
 
-const HeaderContainer: React.FC = () => {
+export const HeaderContainer: React.FC = () => {
   const router = useHistory();
   const { isAuth } = useAppSelector((state) => state.userService);
   const { aboutMe } = useAppSelector((state) => state.dataUsers);
@@ -55,5 +55,3 @@ const HeaderContainer: React.FC = () => {
     />
   );
 };
-
-export default HeaderContainer;

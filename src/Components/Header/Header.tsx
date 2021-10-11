@@ -1,6 +1,6 @@
 import React from 'react';
 import { IAboutMe } from '../../Types/index';
-import Button from '../Button/Button';
+import { Button } from '../Button';
 import cl from './Header.module.scss';
 
 interface IHeaderProps {
@@ -11,7 +11,7 @@ interface IHeaderProps {
   changeDarkTheme: () => void;
 };
 
-const Header: React.FC<IHeaderProps> = ({ isAuth, aboutMeList, handleLogout, changeDarkTheme, changeLightTheme }) => {
+export const Header: React.FC<IHeaderProps> = ({ isAuth, aboutMeList, handleLogout, changeDarkTheme, changeLightTheme }) => {
 
   return (
     <header className={cl.headerMain}>
@@ -40,5 +40,3 @@ const Header: React.FC<IHeaderProps> = ({ isAuth, aboutMeList, handleLogout, cha
     </header >
   );
 };
-
-export default Header;

@@ -1,9 +1,7 @@
 import React from 'react';
 import { Switch, Redirect, Route } from 'react-router-dom';
 import useAppSelector from './Hooks/useAppSelector';
-import About from './Pages/About/AboutPage';
-import Login from './Pages/Login/LoginPage';
-import Main from './Pages/Main/MainPage';
+import { AboutPage, MainPage, LoginPage } from './Pages';
 
 export enum RouteNames {
   LOGIN = '/login',
@@ -18,13 +16,13 @@ const AppRouter: React.FC = () => {
     <>
       {isAuth ? (
         <Switch>
-          <Route exact={true} path={RouteNames.MAIN} component={Main} />
-          <Route exact={true} path={RouteNames.ABOUT} component={About} />
+          <Route exact={true} path={RouteNames.MAIN} component={MainPage} />
+          <Route exact={true} path={RouteNames.ABOUT} component={AboutPage} />
           <Redirect to={RouteNames.MAIN} />
         </Switch>
       ) : (
         <Switch>
-          <Route exact={true} path={RouteNames.LOGIN} component={Login} />
+          <Route exact={true} path={RouteNames.LOGIN} component={LoginPage} />
           <Redirect to={RouteNames.LOGIN} />
         </Switch>
       )}
