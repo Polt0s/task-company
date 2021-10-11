@@ -1,21 +1,3 @@
-export default class LocalStorage {
+import { AuthLocalStorage } from "./AuthLocalStorage";
 
-  static getItem(key: string) {
-    localStorage.getItem(key);
-  };
-
-  static setItem(key: string, value: string) {
-    localStorage.setItem(key, value);
-  };
-
-  static removeItem(key: string) {
-    localStorage.removeItem(key);
-  };
-};
-
-export class AuthLocalStorage extends LocalStorage {
-
-  static getAuth() {
-    return localStorage.getItem('auth');
-  };
-};
+export const authLocalStorage = new AuthLocalStorage();
