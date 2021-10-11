@@ -1,5 +1,5 @@
 import React from 'react';
-import './Card.scss';
+import cl from './Card.module.scss';
 import { ICompany } from '../../Types/index';
 
 interface ICardItemProps {
@@ -12,7 +12,7 @@ interface ICardItemProps {
 const CardItem: React.FC<ICardItemProps> = ({ company, onClick, ...props }) => {
   return (
     <article data-testid={company.id}
-      className={`card-item`}
+      className={cl.cardItem}
       onClick={() => onClick(company.id)} {...props}
       style={company.selected ? { background: 'lightblue' } : {}}
     >

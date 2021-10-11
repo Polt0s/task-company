@@ -1,7 +1,7 @@
 import React from 'react';
 import { IAboutMe } from '../../Types/index';
 import Button from '../Button/Button';
-import './Header.scss';
+import cl from './Header.module.scss';
 
 interface IHeaderProps {
   isAuth: boolean;
@@ -14,11 +14,11 @@ interface IHeaderProps {
 const Header: React.FC<IHeaderProps> = ({ isAuth, aboutMeList, handleLogout, changeDarkTheme, changeLightTheme }) => {
 
   return (
-    <header className={'header-main'}>
+    <header className={cl.headerMain}>
       <nav>
-        <img src={aboutMeList.avatar_url} className={'header-main__img'} alt={'avatar_url'} />
-        <a href={aboutMeList.html_url} target="_blank" className={'header-main__link'}>{aboutMeList.html_url}</a>
-        <h6 className={'header-main__text'}>{aboutMeList.followers}</h6>
+        <img src={aboutMeList.avatar_url} className={cl.headerMain__img} alt={'avatar_url'} />
+        <a href={aboutMeList.html_url} target="_blank" className={cl.headerMain__link}>{aboutMeList.html_url}</a>
+        <h6 className={cl.headerMain__text}>{aboutMeList.followers}</h6>
       </nav>
       <div>
         <Button

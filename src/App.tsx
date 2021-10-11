@@ -2,7 +2,7 @@ import React from 'react';
 import AppRouter from './Router';
 import FooterContainer from './Containers/FooterContainer/FooterContainer';
 import HeaderContainer from './Containers/HeaderContainer/HeaderContainer';
-import './App.scss';
+import cl from './App.module.scss';
 
 interface IAppProps {
   theme: 'light' | 'dark';
@@ -12,8 +12,8 @@ interface IAppProps {
 const App: React.FC<IAppProps> = ({ theme, configTheme }) => {
 
   return (
-    <div className={'grid-root'} data-testid="grid-root" style={{ backgroundColor: configTheme[theme] }}>
-      <div className={'main-content'}>
+    <div className={cl.gridRoot} data-testid="grid-root" style={{ backgroundColor: configTheme[theme] }}>
+      <div className={cl.mainContent}>
         <HeaderContainer />
         <AppRouter />
         <FooterContainer />

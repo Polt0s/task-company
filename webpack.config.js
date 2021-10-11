@@ -87,6 +87,7 @@ module.exports = {
               },
             }
           },
+          { loader: "css-modules-typescript-loader" },
           'css-loader',
           'sass-loader'
         ],

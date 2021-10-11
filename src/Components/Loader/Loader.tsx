@@ -1,9 +1,9 @@
 import React from 'react';
-import './Loader.scss';
+import cl from './Loader.module.scss';
 
 const Loader: React.FC = () => (
-  <div data-testid="loader" className={'loader'}>
-    <div className={'loader__animation'}>
+  <div data-testid="loader" className={cl.loader}>
+    <div className={cl.loader__animation}>
     </div>
   </div>
 );

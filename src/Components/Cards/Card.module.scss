@@ -1,9 +1,9 @@
-.card-block {
+.cardBlock {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }
 
-.card-item {
+.cardItem {
   padding: 16px;
   border: 1px solid #f8d7d7;
   margin: 10px;

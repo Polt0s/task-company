@@ -2,7 +2,7 @@ import React from 'react';
 import { IUser } from '../../Types/index';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
-import './LoginForm.scss';
+import cl from './LoginForm.module.scss';
 import { Formik, Form, FormikHelpers } from 'formik';
 import { RequiredStringSchema } from 'yup/lib/string';
 import { OptionalObjectSchema } from 'yup/lib/object';
@@ -29,7 +29,7 @@ const LoginForm: React.FC<ILoginFormProps> = ({ onSubmit, error, initialValues, 
     >
       {(formik) => (
         <Form style={{ width: '50%' }}>
-          {error ? <h2 id="text-error" className={'text-error'}>{error}</h2> : ''}
+          {error ? <h2 id="text-error" className={cl.textError}>{error}</h2> : ''}
           <Input
             type="text"
             value={formik.values.username}

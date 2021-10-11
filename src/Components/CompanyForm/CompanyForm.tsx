@@ -5,7 +5,7 @@ import Input from '../Input/Input';
 import { Formik, Form, FormikHelpers } from 'formik';
 import StringSchema, { RequiredStringSchema } from 'yup/lib/string';
 import { OptionalObjectSchema } from 'yup/lib/object';
-import './CompanyForm.scss';
+import cl from './CompanyForm.module.scss';
 
 interface ICompanyFormProps {
   onSubmit: (values: ICompany, formikHelpers: FormikHelpers<ICompany>) => void;
@@ -21,7 +21,7 @@ interface ICompanyFormProps {
 const CompanyForm: React.FC<ICompanyFormProps> = ({ onSubmit, initialValues, validationSchema }) => {
 
   return (
-    <div className={'form-layout'}>
+    <div className={cl.formLayout}>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}

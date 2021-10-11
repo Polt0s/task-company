@@ -1,4 +1,4 @@
-.grid-root {
+.gridRoot {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -6,7 +6,7 @@
   grid-template-columns: auto;
 }
 
-.main-content {
+.mainContent {
   display: flex;
   flex-direction: column;
   min-height: 100vh;

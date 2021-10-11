@@ -1,7 +1,7 @@
 import React from 'react';
 import Loader from '../Loader/Loader';
 import CardItem from './CardItem';
-import './Card.scss';
+import cl from './Card.module.scss';
 import { ICompany } from '../../Types/index';
 
 interface ICardsProps {
@@ -26,7 +26,7 @@ const Cards: React.FC<ICardsProps> = ({ companyList, changeSelectedPost, isLoadi
   return (
     <>
       {isLoading ? <Loader /> : (
-        <div id="card-block" className={'card-block'} onContextMenu={onContextMenu}>
+        <div id="card-block" className={cl.cardBlock} onContextMenu={onContextMenu}>
           {companyList.map((item) => (
             <CardItem key={item.id}
               company={item}

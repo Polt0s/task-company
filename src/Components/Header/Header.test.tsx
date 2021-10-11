@@ -29,8 +29,6 @@ describe('Header', () => {
 
     expect(await screen.findByText(aboutMeList.followers)).toBeInTheDocument();
 
-    expect(screen.getByAltText(/avatar_url/i)).toHaveClass('header-main__img');
-
     const buttonLightTheme = screen.getByRole('button', { name: /Светлая тема/i });
     const buttonDarkTheme = screen.getByRole('button', { name: /тёмная тема/i });
 

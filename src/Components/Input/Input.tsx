@@ -1,5 +1,5 @@
 import React from 'react';
-import './Input.scss';
+import cl from './Input.module.scss';
 
 interface InputProps {
   placeholder?: string;
@@ -23,12 +23,12 @@ const Input: React.FC<InputProps> = ({ placeholder, value, handleChange, type, e
         onBlur={onBlur}
         onChange={handleChange}
         onFocus={onFocus}
-        className={'input'}
+        className={cl.input}
         placeholder={placeholder}
         data-testid={id}
       />
       {error && (
-        <p className={'input__text-error'}>{error}</p>
+        <p className={cl.input__textError}>{error}</p>
       )}
     </>
   );
