@@ -1,6 +1,6 @@
 import React from 'react';
 import Loader from '../Loader/Loader';
-import CardItem from './CardItem';
+import CardItem from '../CardItem/CardItem';
 import cl from './Card.module.scss';
 import { ICompany } from '../../Types/index';
 

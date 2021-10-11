@@ -38,19 +38,12 @@ describe('Cards', () => {
 
     expect(cardItem).toBeInTheDocument();
 
-    expect(await screen.findByText('Адрес: Москва')).toBeInTheDocument();
-
-    expect(await screen.findByText('Email: ololo@bk.ru')).toBeInTheDocument();
-
-    expect(await screen.findByText('Телефон: +79654587845')).toBeInTheDocument();
-
     act(() => {
       userEvent.click(cardItem);
     });
 
     expect(changeSelectedPost).toBeCalledTimes(1);
 
-    expect(screen.queryByTestId('loader')).toBeNull();
   });
 
   it('check for rejected data loading', () => {

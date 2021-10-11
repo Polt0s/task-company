@@ -1,5 +1,5 @@
 import React from 'react';
-import cl from './Card.module.scss';
+import cl from './CardItem.module.scss';
 import { ICompany } from '../../Types/index';
 
 interface ICardItemProps {
