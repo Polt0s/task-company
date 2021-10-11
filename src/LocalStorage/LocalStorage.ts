@@ -1,5 +1,5 @@
 export default abstract class LocalStorage {
-  key: string;
+  private key: string;
 
   constructor(key: string) {
     this.key = key;
@@ -7,13 +7,13 @@ export default abstract class LocalStorage {
 
   public getItem() {
     localStorage.getItem(this.key);
-  };
+  }
 
   public setItem(value: string) {
     localStorage.setItem(this.key, value);
-  };
+  }
 
   public removeItem() {
     localStorage.removeItem(this.key);
-  };
-};
+  }
+}
