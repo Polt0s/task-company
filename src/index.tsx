@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './Store';
 import { BrowserRouter } from 'react-router-dom';
-import AppContainer from './Containers/AppContainer';
+import AppContainer from './AppContainer';
 import './index.scss';
 
 ReactDOM.render(

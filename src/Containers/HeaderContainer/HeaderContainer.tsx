@@ -5,7 +5,7 @@ import useAppDispatch from '../../Hooks/useAppDispatch';
 import useAppSelector from '../../Hooks/useAppSelector';
 import { useFetching } from '../../Hooks/useFetching';
 import { IAboutMe } from '../../Types/index';
-import { RouteNames } from '../../Components/AppRouter';
+import { RouteNames } from '../../Router';
 import { setThemeDark, setThemeLight } from '../../Store/reducer/config';
 import { setInfoAboutMe } from '../../Store/reducer/dataUser';
 import { logoutUser } from '../../Store/reducer/userService';

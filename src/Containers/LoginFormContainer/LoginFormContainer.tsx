@@ -6,7 +6,7 @@ import { IUser } from '../../Types/index';
 import { checkUser } from '../../Store/reducer/userService';
 import LoginForm from '../../Components/LoginForm/LoginForm';
 import * as yup from 'yup';
-import { RouteNames } from '../../Components/AppRouter';
+import { RouteNames } from '../../Router';
 
 const LoginFormContainer: React.FC = () => {
   const router = useHistory();
@@ -22,8 +22,6 @@ const LoginFormContainer: React.FC = () => {
     username: '',
     password: '',
   };
-
-  React.useEffect(() => { }, [error]);
 
   const validationSchema = yup.object({
     username: yup.string().min(4, 'имя должно содержать не менее 4 символов').required('обязательное поле'),

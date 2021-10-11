@@ -13,10 +13,9 @@ export default class LocalStorage {
   };
 };
 
-// export class AuthLocalStorage extends LocalStorage {
+export class AuthLocalStorage extends LocalStorage {
 
-//   static isAuth() {
-//    const response =  this.getItem('auth');
-//   return response === true
-//   };
-// };
+  static getAuth() {
+    return localStorage.getItem('auth');
+  };
+};

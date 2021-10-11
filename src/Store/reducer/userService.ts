@@ -2,7 +2,7 @@ import { createSlice, Dispatch } from "@reduxjs/toolkit";
 import { ApiAuthUserService } from "../../Api/ApiAuthUserService";
 import { v4 as uuidv4 } from 'uuid';
 import { IUser } from "../../Types/index";
-import LocalStorage from "../../LocalStorage";
+import LocalStorage, { AuthLocalStorage } from "../../LocalStorage";
 
 interface IConfig {
   error: string,
@@ -13,7 +13,7 @@ interface IConfig {
 const initialState: IConfig = {
   error: '',
   isLoading: false,
-  isAuth: localStorage.getItem('auth') ? true : false,
+  isAuth: AuthLocalStorage.getAuth() ? true : false,
 };
 
 const useUser = createSlice({

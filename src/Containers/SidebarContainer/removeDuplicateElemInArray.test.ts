@@ -1,4 +1,4 @@
-import { removeDuplicateElemInArray } from './helpers/removeDuplicateElemInArray';
+import { removeDuplicateElemInArray } from './removeDuplicateElemInArray';
 
 describe('test helpers function', () => {
 

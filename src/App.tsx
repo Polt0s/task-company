@@ -1,7 +1,7 @@
 import React from 'react';
-import AppRouter from './AppRouter';
-import FooterContainer from '../Containers/FooterContainer/FooterContainer';
-import HeaderContainer from '../Containers/HeaderContainer/HeaderContainer';
+import AppRouter from './Router';
+import FooterContainer from './Containers/FooterContainer/FooterContainer';
+import HeaderContainer from './Containers/HeaderContainer/HeaderContainer';
 import './App.scss';
 
 interface IAppProps {

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import useAppSelector from '../../Hooks/useAppSelector';
-import { removeDuplicateElemInArray } from '../../utils/helpers/removeDuplicateElemInArray';
+import { removeDuplicateElemInArray } from './removeDuplicateElemInArray';
 import Sidebar from '../../Components/Sidebar/Sidebar';
-import { RouteNames } from '../../Components/AppRouter';
+import { RouteNames } from '../../Router';
 
 const SidebarContainer: React.FC = React.memo(() => {
   const router = useHistory();

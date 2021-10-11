@@ -3,8 +3,7 @@ import { IUserInfo } from '../../Types/index';
 import './Footer.scss';
 
 const Footer: React.FC<{ userData: IUserInfo }> = ({ userData }) => {
-  const test = localStorage.auth = 2;
-  console.log(test);
+
   return (
     <footer className={'footer-main'}>
       <img src={userData.avatar_url} className={'footer-main__img'} alt="user_avatar_url" />
