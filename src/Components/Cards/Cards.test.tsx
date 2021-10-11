@@ -30,10 +30,6 @@ describe('Cards', () => {
       <Cards companyList={company} changeSelectedPost={changeSelectedPost} isLoading={false} />
     );
 
-    const loader = screen.queryByTestId('loader');
-
-    expect(loader).toBeNull();
-
     const cardItem = await screen.findByTestId(1);
 
     expect(cardItem).toBeInTheDocument();
@@ -52,10 +48,8 @@ describe('Cards', () => {
     );
 
     const cards = screen.queryByTestId('card-block');
-    const loader = screen.getByTestId('loader');
 
     expect(cards).toBeNull();
-    expect(loader).toBeInTheDocument();
   });
 });
 
