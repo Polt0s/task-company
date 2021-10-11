@@ -1,5 +1,5 @@
 import { IUserInfo, IAboutMe } from "../Types/index";
-import ApiService from "./ApiServise";
+import ApiService from "./ApiService";
 
 export class ApiDataUsers extends ApiService {
 

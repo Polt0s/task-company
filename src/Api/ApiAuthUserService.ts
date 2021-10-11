@@ -1,5 +1,5 @@
 import { IUser } from "../Types/index";
-import ApiService from "./ApiServise";
+import ApiService from "./ApiService";
 
 export class ApiAuthUserService extends ApiService {
 

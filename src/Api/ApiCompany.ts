@@ -1,5 +1,5 @@
 import { ICompany } from "../Types/index";
-import ApiService from './ApiServise';
+import ApiService from './ApiService';
 
 export class ApiCompany extends ApiService {
   static getCompanyData() {
