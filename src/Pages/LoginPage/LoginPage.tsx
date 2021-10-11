@@ -1,12 +1,12 @@
 import React from 'react';
+import { Layout } from '../../Components';
 import { LoginFormContainer } from '../../Containers';
-import './Login.scss';
 
 export const LoginPage: React.FC = () => {
   return (
-    <section className={'layout-login'}>
+    <Layout>
       <h1>Войти в систему</h1>
       <LoginFormContainer />
-    </section>
+    </Layout>
   );
 };

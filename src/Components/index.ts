@@ -8,3 +8,4 @@ export { Input } from './Input';
 export { Loader } from './Loader';
 export { LoginForm } from './LoginForm';
 export { Sidebar } from './Sidebar';
+export { Layout } from './Layout';
