@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, act } from "@testing-library/react";
-import Btn from "./Btn";
+import Button from "./Button";
 import userEvent from "@testing-library/user-event";
 
 describe('Button', () => {
@@ -10,7 +10,7 @@ describe('Button', () => {
 
   it('check button props', () => {
     render(
-      <Btn
+      <Button
         onClick={onClick}
         onFocus={onFocus}
         type={'submit'}
@@ -38,7 +38,7 @@ describe('Button', () => {
   });
 
   it('check button is disabled', () => {
-    render(<Btn disabled={true} />);
+    render(<Button disabled={true} />);
 
     const button = screen.getByRole('button');
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { IAboutMe } from '../../Types/index';
-import Btn from '../Button/Btn';
+import Button from '../Button/Button';
 import './Header.scss';
 
 interface IHeaderProps {
@@ -21,21 +21,21 @@ const Header: React.FC<IHeaderProps> = ({ isAuth, aboutMeList, handleLogout, cha
         <h6 className={'header-main__text'}>{aboutMeList.followers}</h6>
       </nav>
       <div>
-        <Btn
+        <Button
           onFocus={(event) => event.target.style.background = 'lightblue'}
           onBlur={(event) => event.target.style.background = '#b5b5f1'}
           onClick={changeLightTheme}
         >
           Светлая тема
-        </Btn>
-        <Btn
+        </Button>
+        <Button
           onClick={changeDarkTheme}
           onFocus={(event) => event.target.style.background = 'lightblue'}
           onBlur={(event) => event.target.style.background = '#b5b5f1'}
         >
           Тёмная тема
-        </Btn>
-        {isAuth ? <Btn onClick={handleLogout}>Выйти</Btn> : ''}
+        </Button>
+        {isAuth ? <Button onClick={handleLogout}>Выйти</Button> : ''}
       </div>
     </header >
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { IUser } from '../../Types/index';
-import Btn from '../Button/Btn';
+import Button from '../Button/Button';
 import Input from '../Input/Input';
 import './LoginForm.scss';
 import { Formik, Form, FormikHelpers } from 'formik';
@@ -52,7 +52,7 @@ const LoginForm: React.FC<ILoginFormProps> = ({ onSubmit, error, initialValues, 
             onBlur={formik.handleBlur}
             onFocus={formik.handleBlur}
           />
-          <Btn type="submit" style={{ margin: 5 }} disabled={!formik.isValid}>Войти</Btn>
+          <Button type="submit" style={{ margin: 5 }} disabled={!formik.isValid}>Войти</Button>
         </Form>
       )}
     </Formik>

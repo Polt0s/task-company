@@ -1,7 +1,7 @@
 import React from 'react';
 import './Button.scss';
 
-const Btn: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = (props) => {
+const Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = (props) => {
   return (
     <button className={'btn-main'}
       {...props}
@@ -11,4 +11,4 @@ const Btn: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = (props) => 
   );
 };
 
-export default Btn;
+export default Button;

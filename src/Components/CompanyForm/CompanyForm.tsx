@@ -1,6 +1,6 @@
 import React from 'react';
 import { ICompany } from '../../Types/index';
-import Btn from '../Button/Btn';
+import Button from '../Button/Button';
 import Input from '../Input/Input';
 import { Formik, Form, FormikHelpers } from 'formik';
 import StringSchema, { RequiredStringSchema } from 'yup/lib/string';
@@ -74,7 +74,7 @@ const CompanyForm: React.FC<ICompanyFormProps> = ({ onSubmit, initialValues, val
               onBlur={formik.handleBlur}
               onFocus={formik.handleBlur}
             />
-            <Btn style={{ margin: 5 }} type="submit" disabled={!formik.isValid}>Отправить</Btn>
+            <Button style={{ margin: 5 }} type="submit" disabled={!formik.isValid}>Отправить</Button>
           </Form>
         )}
       </Formik>
