@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardsContainer, SidebarContainer, CompanyFormContainer } from '../../Containers';
-import cl from './Main.module.scss';
+import cl from './MainPage.module.scss';
 
 export const MainPage: React.FC = () => {
   return (
